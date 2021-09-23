@@ -5,11 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
     <title>Museum</title>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="logo" href="#">
+                    <span class="logo__icon"></span>Louvre
+                </a>
+
+                <nav class="nav header__nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link nav__link_active" href="#visiting" >Visiting</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#explore" >Explore</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#video" >Video</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#gallery" >Gallery</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#tickets" >Tickets</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contacts" >Contacts</a>
+                        </li>
+                    </ul>
+                </nav>    
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="welcome main__welcome">
+            <div class="container">
+                <div class="welcome__inner">
+                    <div class="content welcome__content">
+                        <h2 class="content__title">Welcome <br/> to the Louvre</h2>
+                        <p class="content__text">From the castle to the museum</p>
+                        <a class="content__link" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank">
+                            Discover the Louvre
+                        </a>
+                    </div>
+
+                    <div class="slider welcome__slider">
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+        <section class="visiting section" id="visiting">
+            <div class="container">
+                <div class="content">
+                    <h2 class="content__title content__title_gold ">Virtual tour</h2>
+                    <div class="content__strip"></div>
+                    <div class="tour">
+                        <a class="tour__card" href="tours/tour1.html" target="_blank">
+                            <img class="tour__img" src="assets/img/tour/royal_palace.jpg" alt="Royal Palace" >
+                            <h3 class="tour__title">Royal Palace</h3>
+                            <p class="tour__subtitle">360° Virtual Tour</p>
+                            <p class="tour__text">Google Street Panorama View</p>
+                        </a>
+
+                        <a class="tour__card" href="tours/tour2.html" target="_blank">
+                            <img class="tour__img" src="assets/img/tour/denon_wing.jpg" alt="Denon Wing" >
+                            <h3 class="tour__title">Denon Wing</h3>
+                            <p class="tour__subtitle">360° Virtual Tour</p>
+                            <p class="tour__text">Google Street Panorama View</p>
+                        </a>
+
+                        <a class="tour__card" href="tours/tour3.html" target="_blank">
+                            <img class="tour__img" src="assets/img/tour/colonnade_perrault.jpg" alt="Colonnade Perrault" >
+                            <h3 class="tour__title">Colonnade Perrault</h3>
+                            <p class="tour__subtitle">360° Virtual Tour</p>
+                            <p class="tour__text">Google Street Panorama View</p>
+                        </a>
+
+                        <a class="tour__card" href="tours/tour4.html"target="_blank">
+                            <img class="tour__img" src="assets/img/tour/greek_hall.jpg" alt="Greek hall" >
+                            <h3 class="tour__title">Greek hall</h3>
+                            <p class="tour__subtitle">360° Virtual Tour</p>
+                            <p class="tour__text">Google Street Panorama View</p>
+                        </a>
+
+                        <a class="tour__card" href="tours/tour5.html" target="_blank">
+                            <img class="tour__img" src="assets/img/tour/mona_lisa.jpg" alt="Mona Lisa" >
+                            <h3 class="tour__title">Mona Lisa</h3>
+                            <p class="tour__subtitle">360° Virtual Tour</p>
+                            <p class="tour__text">Google Street Panorama View</p>
+                        </a>
+
+                        <a class="tour__card" href="tours/tour6.html" target="_blank">
+                            <img class="tour__img" src="assets/img/tour/night_palace.jpg" alt="Night Palace" >
+                            <h3 class="tour__title">Night Palace</h3>
+                            <p class="tour__subtitle">360° Virtual Tour</p>
+                            <p class="tour__text">Google Street Panorama View</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="explore" id="explore"></section>
+        <section class="video" id="video"></section>
+        <section class="gallery" id="gallery"></section>
+        <section class="tickets" id="tickets"></section>
+        <section class="contacts" id="contacts"></section>
+    </main>
+
+    <footer></footer>
 </body>
 </html>

@@ -1,0 +1,288 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    /* font-family: 'Forum', cursive;
+    font-family: 'Roboto', sans-serif; */
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #000000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+
+/* --------- Header ---------*/
+
+.header {
+    background-color: #030303;
+}
+
+.header__inner {
+    height: 150px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;        
+    color: #FFFFFF;
+}
+
+.logo {
+    font-family: Forum;
+    font-weight: normal;
+    font-size: 28px;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 31px;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+}
+
+.logo__icon {
+    display: inline-block;
+    width: 49px;
+    height: 26px;
+    margin-right: 15px;
+    background-image: url(../assets/svg/museum-icon.svg);
+}
+
+/* --------- Navigation ---------*/
+
+.header__nav {
+    width: 775px;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav__link {
+    font-weight: 200;
+    font-size: 22px;
+    text-decoration: none;
+    line-height: 26px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+
+    transition: 0.2s;
+}
+
+.nav__link_active {
+    color: #7E6C51;
+}
+
+.nav__link:hover {
+    color: #9D8665;
+}
+
+/* --------- Main ---------*/
+
+.section {
+    padding: 75px 0;
+}
+
+/* --------- Welcome ---------*/
+
+.main__welcome {
+    width: 100%;
+    height: 842px;
+
+    background-color: #030303;
+}
+
+.welcome__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome__content {
+    width: 100%;
+    max-width: 598px;
+    height: 388px;
+    margin-top: 150px;
+
+    color: #FFFFFF;
+}
+
+.welcome__slider {
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+
+    /* background: #030303; */
+    background: #83735c;
+}
+
+
+/* --------- Content ---------*/
+
+.content__title {
+    margin-bottom: 25px;
+
+    font-family: Forum;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.content__title_gold {
+    color: #9D8665;
+}
+
+.content__strip {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 75px;
+
+    background: #710707;
+}
+
+.content__text {
+    margin-bottom: 75px;
+
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 2px;
+}
+
+.content__link {
+    display: block;
+    width: 360px;
+    height: 75px;
+    padding: 25px 40px;
+
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+
+    background: #710707;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.content__link:hover {
+    background: #9D8665;
+}
+
+
+/* --------- Tour ---------*/
+
+.tour {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 75px 60px;
+}
+
+.tour__card {
+    width: 100%;
+    max-width: 440px;
+    height: 424px;
+    /* margin-bottom: 75px; */
+    display: block;
+
+    /* background-color: #9D8665; */
+
+    text-decoration: none;
+    color: #000000;
+}
+
+.tour__card:hover .tour__title::after {
+    width: 100%;
+}
+
+.tour__img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    max-height: 285px;
+    margin-bottom: 25px;
+}
+
+.tour__title {
+    margin-bottom: 22px;
+
+    font-family: Forum;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+
+.tour__title::after {
+    content: "";
+    width: 300px;
+    height: 2px;
+    display: block;
+
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+
+    background: #710707;
+
+    transition: 1s;
+}
+
+.tour__subtitle {
+    padding-bottom: 10px;
+
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.tour__text {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+    
+
