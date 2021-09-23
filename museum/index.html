@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
@@ -50,10 +52,10 @@
         <section class="welcome main__welcome">
             <div class="container">
                 <div class="welcome__inner">
-                    <div class="content welcome__content">
-                        <h2 class="content__title">Welcome <br/> to the Louvre</h2>
-                        <p class="content__text">From the castle to the museum</p>
-                        <a class="content__link" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank">
+                    <div class="welcome__content">
+                        <h2 class="welcome__title">Welcome <br/> to the Louvre</h2>
+                        <p class="welcome__text">From the castle to the museum</p>
+                        <a class="welcome__link" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank">
                             Discover the Louvre
                         </a>
                     </div>
@@ -66,9 +68,8 @@
 
         <section class="visiting section" id="visiting">
             <div class="container">
-                <div class="content">
-                    <h2 class="content__title content__title_gold ">Virtual tour</h2>
-                    <div class="content__strip"></div>
+                    <h2 class="section__title section__title_gold ">Virtual tour</h2>
+                    <div class="section__strip"></div>
                     <div class="tour">
                         <a class="tour__card" href="tours/tour1.html" target="_blank">
                             <img class="tour__img" src="assets/img/tour/royal_palace.jpg" alt="Royal Palace" >
@@ -116,11 +117,117 @@
             </div>
         </section>
 
-        <section class="explore" id="explore"></section>
+        <section class="explore section section_dark" id="explore">
+            <div class="container">
+                <div class="explore__inner">
+                    <div class="explore__content">
+                        <h3 class="section__title section__title_light">Picture explore</h3>
+                        <div class="section__strip"></div>
+                        <p class="section__text section__text_light">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                        <p class="section__text section__text_light">It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
+                        <p class="section__text section__text_light">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                    </div>
+
+                    <img class="explore__img"src="assets/img/explore-slider/after.jpg" alt="after"> 
+                </div>        
+            </div>
+        </section>
+
+
+
+
         <section class="video" id="video"></section>
         <section class="gallery" id="gallery"></section>
-        <section class="tickets" id="tickets"></section>
-        <section class="contacts" id="contacts"></section>
+
+
+
+        <section class="tickets section" id="tickets">
+            <div class="container">
+                <h2 class="section__title section__title_gold">Buy tickets</h2>
+                <div class="section__strip"></div>
+                <!-- <div class="layout-2-col"> -->
+                <div class="tickets__inner">
+                    <img class="tickets__img" src="../museum/assets/img/buy-tickets_img.jpg" alt="buy-tickets">
+
+                    <div class="tickets__content">
+                        <div class="ticket-type">
+                            <p class="section__subtitle">Ticket Type</p>
+                            
+<!-- -------------------------------------------------------------- -->
+
+                            <!-- <div class="ticket-type__item">
+                                <input class="ticket-type__choice" type="radio" name="ticket-type" value="permanent" id="ticketPermanent" checked>
+                                <label class="ticket-type__label" for="ticketPermanent">Permanent exhibition</label>
+                            </div>
+
+                            <div class="ticket-type__item">
+                                <input class="ticket-type__choice" type="radio" name="ticket-type" value="temporary" id="ticketTermanent">
+                                <label class="ticket-type__label" for="ticketTermanent">Temporary exhibition</label>
+                            </div>
+                                
+                            <div class="ticket-type__item">
+                                <input class="ticket-type__choice" type="radio" name="ticket-type" value="combined" id="ticketCombined">
+                                <label class="ticket-type__label" for="ticketCombined">Combined Admission</label>
+                            </div> -->
+
+                        </div>
+<!-- -------------------------------------------------------------- -->
+                        <div class="amount">
+                            <p class="section__subtitle">Amount</p>
+
+                            <div class="amount__tickets">
+                                <label class="amount__tickets-age" for="basic">Basic 18+</label>
+                                <div class="amount__calc">
+                                    <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
+                                    <input class="amount__value" type="number" min="0" max="20" value="1"  id="basic" readonly >
+                                    <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                </div>
+
+                                <label class="amount__tickets-age" for="senior">Senior 65+</label>
+                                <div class="amount__calc">
+                                    <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
+                                    <input class="amount__value" type="number" min="0" max="20" value="1" id="senior" readonly >
+                                    <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                </div>
+
+                                <div class="amount__total">Total &#8364;</div>
+                            </div>
+
+                            <button class="button button_dark button_block" type="button">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <div class="parallax"></div>
+
+        <section class="contacts section" id="contacts">
+            <div class="container">
+                <h2 class="section__title section__title_gold">Contacts</h2>
+                <div class="section__strip"></div>
+                <div class="contacts__inner">
+
+                    <div class="contacts__content">
+                        <p class="section__subtitle">Palais Royal <br/> Musee du Louvre</p>
+
+                        <ul class="contacts__list">
+                            <li class="contacts__item">
+                                <a class="contacts__link" href="https://www.google.com/maps/place/75001+%D0%9F%D0%B0%D1%80%D0%B8%D0%B6,+%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F/@48.8619633,2.3184331,14z/data=!3m1!4b1!4m5!3m4!1s0x47e66e25d0482b3d:0x1c0b82c6e1d85100!8m2!3d48.8640493!4d2.3310526" target="_blank">address: 75001 Paris, France</a>
+                            </li>
+                            <li class="contacts__item">
+                                <a class="contacts__link" href="tel:+33(0)140205050">phone: +33(0) 1 40 20 50 50</a>
+                            </li>
+                            <li class="contacts__item">
+                                <a class="contacts__link" href="mailto:info@louvre.fr">mail: info@louvre.fr</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <img class="contacts__map" src="assets/img/map.jpg"></img>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer></footer>

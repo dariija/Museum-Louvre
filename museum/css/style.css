@@ -34,6 +34,18 @@ ul, ol {
     list-style: none;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input {
+    margin: 0;
+}
+
+/* --------- Container ---------*/
+
 .container {
     width: 100%;
     max-width: 1440px;
@@ -78,6 +90,7 @@ ul, ol {
     background-image: url(../assets/svg/museum-icon.svg);
 }
 
+
 /* --------- Navigation ---------*/
 
 .header__nav {
@@ -109,11 +122,6 @@ ul, ol {
     color: #9D8665;
 }
 
-/* --------- Main ---------*/
-
-.section {
-    padding: 75px 0;
-}
 
 /* --------- Welcome ---------*/
 
@@ -138,51 +146,15 @@ ul, ol {
     color: #FFFFFF;
 }
 
-.welcome__slider {
-    width: 100%;
-    max-width: 600px;
-    height: 120px;
-
-    /* background: #030303; */
-    background: #83735c;
-}
-
-
-/* --------- Content ---------*/
-
-.content__title {
-    margin-bottom: 25px;
-
-    font-family: Forum;
-    font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-.content__title_gold {
-    color: #9D8665;
-}
-
-.content__strip {
-    width: 100%;
-    height: 3px;
-    margin-bottom: 75px;
-
-    background: #710707;
-}
-
-.content__text {
-    margin-bottom: 75px;
-
+.welcome__text {
     font-weight: 300;
     font-size: 28px;
     line-height: 33px;
+
     letter-spacing: 2px;
 }
 
-.content__link {
+.welcome__link {
     display: block;
     width: 360px;
     height: 75px;
@@ -202,8 +174,83 @@ ul, ol {
     transition: 0.3s;
 }
 
-.content__link:hover {
+.welcome__link:hover {
     background: #9D8665;
+}
+
+.welcome__slider {
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+
+    /* background: #030303; */
+    background: #83735c;
+}
+
+
+/* --------- Main Sections ---------*/
+
+.section {
+    padding: 75px 0;
+}
+
+.section_dark {
+    background: #030303;
+}
+
+.section__title {
+    margin-bottom: 25px;
+
+    font-family: Forum;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.section__title_gold {
+    color: #9D8665;
+}
+
+.section__title_light {
+    color: #FFFFFF;
+}
+
+.section__subtitle {
+    margin-bottom: 50px;
+
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+}
+
+/* .section__subtitle_light {
+    color: #FFFFFF;
+} */
+
+.section__strip {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 75px;
+
+    background: #710707;
+}
+
+.section__text {
+    margin-bottom: 25px;
+
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 38px;
+}
+
+.section__text_light {
+    color: #FFFFFF;
+}
+
+.section__text span{
+    color: #9D8665;
 }
 
 
@@ -222,8 +269,6 @@ ul, ol {
     height: 424px;
     /* margin-bottom: 75px; */
     display: block;
-
-    /* background-color: #9D8665; */
 
     text-decoration: none;
     color: #000000;
@@ -254,7 +299,6 @@ ul, ol {
     position: relative;
 }
 
-
 .tour__title::after {
     content: "";
     width: 300px;
@@ -284,5 +328,243 @@ ul, ol {
     line-height: 21px;
 }
 
+
+/* --------- Explore ---------*/
+
+.explore__inner {
+    display: flex;
+}
+
+.explore__content {
+    max-width: 660px;
+    width: 100%;
+    margin-right: 60px;
+}
+
+.explore__img {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    max-height: 700px;
+}
+
+/* --------- Video---------*/
+
+/* --------- Gallery ---------*/
+
+/* --------- Tickets ---------*/
+
+.tickets__inner {
+    display: flex;
+}
+
+.tickets__img {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    max-height: 550px;
+}
+
+.tickets__content {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-type {
+    width: 100%;
+    max-width: 270px;
+    margin-left: 60px;
+}
+
+/* ============================= */
+
+/* 
+.ticket-type__item {
+    margin-top: 25px;
+    display: block;
+
+    line-height: 26px;
+
+    cursor: pointer;
+}
+
+.ticket-type__type{
+    display: block;
+}
+
+.ticket-type__type::before {
+    content: '';
+    display: inline-block;
+
+    width: 17px;
+    height: 17px;
+
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.ticket-type__choice {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+}
+
+.ticket-type__choice:checked .ticket-type__type::before {
+    background: #000000;
+} */
+
+
+/* ============================= */
+
+.amount {
+    width: 100%;
+    max-width: 175px;
+    margin-left: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     
+}
+
+.amount__tickets {
+    width: 150px;
+    margin-top: -25px;
+    margin-bottom: 52px;
+}
+
+.amount__total {
+    margin-top: 50px;
+
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 1.65px;
+}
+
+.amount__total::after{
+    content: "220";
+    display: inline-block;
+}
+
+.amount__calc {
+    /* width: 150px; */
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border: 3px solid #000000; 
+}
+
+.amount__button {
+    font-size: 32px;
+    line-height: 37px;
+    /* padding: 0 14px; */
+
+    border: 0;
+
+    cursor: pointer;
+}
+
+.amount__value {
+    all: unset;
+    text-align: center;
+}
+
+.amount__tickets-age {
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* --------- Button ---------*/
+
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+
+    border: 0;
+
+    cursor: pointer;
+}
+
+.button_dark {
+    background: #000000;
+    border-radius: 2px;
+
+    transition: 0.3s;
+}
+
+.button_dark:hover {
+    background: #9D8665;
+}
+
+.button_block {
+    height: 50px;
+    width: 100%;
+}
+
+/* --------- Parallax ---------*/
+
+.parallax {
+    width: 100%;
+    height: 400px;
+
+    background-image: url(../assets/img/parallax.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* --------- Contacts ---------*/
+
+.contacts__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts__content{
+    width: 282px;
+}
+
+.contacts__item {
+    margin-bottom: 25px;
+}
+
+.contacts__link {
+    font-weight: 300;
+    font-size: 22px;
+    text-decoration: none;
+    line-height: 26px;
+    color: #000000;
+
+    transition: 0.2s;
+}
+
+.contacts__link:hover {
+    color: #9D8665;
+}
+
+.contacts__map {
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    max-height: 620px;
+}
 
