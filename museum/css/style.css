@@ -55,6 +55,11 @@ input {
     position: relative;
 }
 
+.layout-2-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* --------- Header ---------*/
 
@@ -331,10 +336,6 @@ input {
 
 /* --------- Explore ---------*/
 
-.explore__inner {
-    display: flex;
-}
-
 .explore__content {
     max-width: 660px;
     width: 100%;
@@ -350,13 +351,127 @@ input {
 
 /* --------- Video---------*/
 
+.video__content {
+    max-width: 720px;
+    width: 100%;
+}
+
+.video__player {
+    margin-top: 75px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.video__preview {
+    width: 100%;
+    height: 650px;
+
+    position: relative;
+
+    background-image: url(../assets/img/video-posters/poster0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.video__play-button {
+    width: 220px;
+    height: 220px;
+
+    position: absolute;
+    top: calc(50% - 110px);
+    left: calc(50% - 110px);
+
+    background: url(../assets/svg/play-button.svg);
+    border: none;
+
+    cursor: pointer;
+}
+
+.player-controls {
+    width: 100%;
+    height: 85px;
+
+    background-color:  #000000;;
+}
+
+.player-controls__inner {
+    width: 1380px;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-controls__play-button-small {
+    width: 23px;
+    height: 31px;
+
+    background: url(../assets/svg/player-play-small.svg);
+    border: none;
+
+    cursor: pointer;
+}
+
+.player-controls__sound-button {
+    width: 38px;
+    height: 31px;
+
+    background: url(../assets/svg/player-sound.svg);
+    border: none;
+
+    cursor: pointer;
+}
+
+.player-controls__fullscreen-button {
+    width: 35px;
+    height: 35px;
+
+    background: url(../assets/svg/player-fullscreen.svg);
+    border: none;
+
+    cursor: pointer;
+}
+
+.player-controls__progress-bar {
+    width: 929px;
+    height: 15px;
+    margin: 0 50px;
+}
+
+.player-controls__volume {
+    width: 155px;
+    margin: 0 50px;
+}
+
+.video__playlist {
+    margin: 40px 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 0 45px;
+}
+
+.video__item{
+    width: 100%;
+    height: 254px;
+
+    border: none;
+}
+
+/* .video__slider {
+    width: 200px;
+    height: 12px;
+
+    display: flex;
+    justify-content: space-between;
+} */
+
 /* --------- Gallery ---------*/
 
 /* --------- Tickets ---------*/
-
-.tickets__inner {
-    display: flex;
-}
 
 .tickets__img {
     width: 100%;
@@ -533,11 +648,6 @@ input {
 }
 
 /* --------- Contacts ---------*/
-
-.contacts__inner {
-    display: flex;
-    justify-content: space-between;
-}
 
 .contacts__content{
     width: 282px;
