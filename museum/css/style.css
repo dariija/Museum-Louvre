@@ -56,9 +56,24 @@ input {
 }
 
 .layout-2-columns {
+    height: 100%;
+
     display: flex;
     justify-content: space-between;
 }
+
+.layout-3-columns {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .icon {
+    border: none;
+    cursor: pointer;
+} */
 
 
 /* --------- Header ---------*/
@@ -104,7 +119,6 @@ input {
 
 .nav__list {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -678,3 +692,117 @@ input {
     max-height: 620px;
 }
 
+
+/* --------- Footer ---------*/
+
+.footer {
+    background-color: #030303;
+}
+
+.footer__content {
+    width: 100%;
+    height: 265px;
+    padding: 86px 0 50px 0;
+}
+
+.footer__logo {
+    margin-right: 145px;
+}
+
+.footer__nav {
+    width: 363px;
+    height: 128px;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between
+}
+
+.footer__nav-item {
+    height: 33.3%;
+}
+
+.footer__contacts {
+    width: 340px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer__strip {
+    width: 100%;
+    height: 3px;
+
+    background: #666666;
+}
+
+.footer__info {
+    width: 100%;
+    height: 124px;
+
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+.contacts__item_icon {
+    margin: 0;
+
+    border: 1px solid #666666;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.contacts__item_icon:hover {
+    border-color: #9D8665;
+}
+
+.icon-round {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.icon-round_youtube {
+    background: url(../assets/svg/contacts/icon-youtube.svg);
+}
+
+.icon-round_youtube:hover {
+    background: url(../assets/svg/contacts/icon-youtube-gold.svg);
+}
+
+.icon-round_instagram {
+    background: url(../assets/svg/contacts/icon-instagram.svg);
+}
+
+.icon-round_instagram:hover {
+    background: url(../assets/svg/contacts/icon-instagram-gold.svg);
+}
+
+.icon-round_facebook {
+    background: url(../assets/svg/contacts/icon-facebook.svg);
+}
+
+.icon-round_facebook:hover {
+    background: url(../assets/svg/contacts/icon-facebook-gold.svg);
+}
+
+.icon-round_twitter {
+    background: url(../assets/svg/contacts/icon-twitter.svg);
+}
+
+.icon-round_twitter:hover {
+    background: url(../assets/svg/contacts/icon-twitter-gold.svg);
+}
+
+.icon-round_pinterest {
+    background: url(../assets/svg/contacts/icon-pinterest.svg);
+}
+
+.icon-round_pinterest:hover {
+    background: url(../assets/svg/contacts/icon-pinterest-gold.svg);
+}
