@@ -198,13 +198,33 @@
                         <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/NOhDysLnTvY?start=10" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
                     </div>
 
-                    <div class="video__slider"></div>
+                    <div class="video-slider">
+                        <button class="video-slider__button-left" type="button"></button>
+                        <span class="video-slider__pagination video-slider__pagination_active"></span>
+                        <span class="video-slider__pagination"></span>
+                        <span class="video-slider__pagination"></span>
+                        <span class="video-slider__pagination"></span>
+                        <span class="video-slider__pagination"></span>
+                        <button class="video-slider__button-right" type="button"></button>
+                    </div>
                 </div>
             </div>
         </section>
 
 
-        <section class="gallery" id="gallery"></section>
+        <section class="gallery" id="gallery">
+            <div class="gallery__section">
+                <div class="container">
+                    <h2 class="section__title section__title_light">Art Gallery</h2>
+                    <div class="gallery-pictures">
+                        <div class="gallery-pictures__inner">
+                        </div>
+                    </div>
+
+                    <div class="gallery__gradient"></div>
+                </div>
+            </div>
+        </section>
 
         <section class="tickets" id="tickets">
             <div class="section">
@@ -372,5 +392,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/gallery.js"></script>
 </body>
 </html>
