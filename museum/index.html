@@ -19,7 +19,8 @@
         <div class="container">
             <div class="header__inner">
                 <a class="logo" href="#">
-                    <span class="logo__icon"></span>Louvre
+                    <span class="logo__icon"></span>
+                    <h1 class="header__title">Louvre</h1>
                 </a>
 
                 <nav class="nav header__nav">
@@ -49,19 +50,45 @@
     </header>
 
     <main class="main">
-        <section class="welcome main__welcome">
-            <div class="container">
-                <div class="welcome__inner">
-                    <div class="welcome__content">
-                        <h2 class="welcome__title">Welcome <br/> to the Louvre</h2>
-                        <p class="welcome__text">From the castle to the museum</p>
-                        <a class="welcome__link" href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" target="_blank">
-                            Discover the Louvre
-                        </a>
+        <section class="welcome">
+            <div class="welcome__section">
+                <div class="container">
+                    <div class="welcome__background">
+                        <div class="welcome__gradient"></div>
+                        <div class="welcome__poster"></div>
                     </div>
 
-                    <div class="slider welcome__slider">
-                    </div>    
+                    <div class="layout-2-columns">
+                        <div class="welcome__content">
+                            <h2 class="welcome__title"">Welcome <br/> to the Louvre</h2>
+                            <p class="welcome__text">From the castle to the museum</p>
+                            <a class="welcome__link-button" href="tours/welcome.html" target="_blank">
+                                Discover the Louvre
+                            </a>
+                        </div>
+
+                        <div class="slider welcome__slider">
+                            <div class="slider__num">
+                                <input class="slider__num-now" type="number" min="00" max="05" value="01" readonly>
+                                <span class="slider__num-delim">&#448;</span>
+                                <input class="slider__num-all" type="number" value="05" min="05" max="05" readonly>
+                            </div>
+
+                            <div class="slider__pagination">
+                                <span class="slider__pagination-item slider__pagination-item_active"></span>
+                                <span class="slider__pagination-item"></span>
+                                <span class="slider__pagination-item"></span>
+                                <span class="slider__pagination-item"></span>
+                                <span class="slider__pagination-item"></span>
+
+                            </div>
+
+                            <div class="slider__controls">
+                                <button class="slider__button-left"type="button"></button>
+                                <button class="slider__button-right"type="button"></button>
+                            </div>
+                        </div>    
+                    </div>
                 </div>
             </div>
         </section>

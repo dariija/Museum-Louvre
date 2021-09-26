@@ -110,6 +110,11 @@ input {
     background-image: url(../assets/svg/museum-icon.svg);
 }
 
+.header__title {
+    display: inline-block;
+
+    all: unset;
+}
 
 /* --------- Navigation ---------*/
 
@@ -144,16 +149,46 @@ input {
 
 /* --------- Welcome ---------*/
 
-.main__welcome {
+.welcome__section {
     width: 100%;
-    height: 842px;
+    height: 810px;
 
     background-color: #030303;
 }
 
-.welcome__inner {
-    display: flex;
-    justify-content: space-between;
+.welcome__background {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.welcome__gradient {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    background-image: linear-gradient(to right, #030303 60%, #030303d5 70%, rgba(238, 238, 238, 0) 100%);
+}
+
+.welcome__poster {
+    width: 1000px;
+    height: 750px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    background-image: url(../assets/img/welcome-slider/1.jpg);
 }
 
 .welcome__content {
@@ -163,17 +198,32 @@ input {
     margin-top: 150px;
 
     color: #FFFFFF;
+    z-index: 5;
+}
+
+.welcome__title {
+    margin-bottom: 25px;
+
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
 }
 
 .welcome__text {
+    margin-bottom: 75px;
+
     font-weight: 300;
     font-size: 28px;
     line-height: 33px;
-
     letter-spacing: 2px;
 }
 
-.welcome__link {
+.welcome__link-button {
     display: block;
     width: 360px;
     height: 75px;
@@ -193,7 +243,7 @@ input {
     transition: 0.3s;
 }
 
-.welcome__link:hover {
+.welcome__link-button:hover {
     background: #9D8665;
 }
 
@@ -202,8 +252,92 @@ input {
     max-width: 600px;
     height: 120px;
 
-    /* background: #030303; */
-    background: #83735c;
+    align-self: flex-end;
+
+    background: #030303;
+    z-index: 5;
+}
+
+/* --------- Welcome Slider  ---------*/
+
+.slider {
+    width: 100%;
+    padding: 0 75px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 40px;    
+    text-transform: uppercase;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+.slider__num {
+    width: 76px;
+    height: 40px;
+
+    display: flex;
+}
+
+.slider__num-now,
+.slider__num-all {
+    width: 25px;
+    height: 40px;
+
+    all: unset;
+}
+
+.slider__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0 25px;
+}
+
+.slider__pagination-item,
+.slider__pagination-item_active {
+    width: 16px;
+    height: 16px;
+}
+
+.slider__pagination-item {
+    background: url(../assets/svg/welcome-slider/slide-pagination.svg);
+}
+
+.slider__pagination-item_active {
+    background: url(../assets/svg/welcome-slider/active-slide-pagination.svg);
+}
+
+.slider__controls {
+    width: 80px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__button-left,
+.slider__button-right {
+    width: 30px;
+    height: 8px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.slider__button-left {
+    background: url(../assets/svg/welcome-slider/left.svg);
+}
+
+.slider__button-right {
+    background: url(../assets/svg/welcome-slider/right.svg);
 }
 
 
