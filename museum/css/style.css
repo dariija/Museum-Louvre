@@ -1352,6 +1352,15 @@ input {
     position: relative;
 }
 
+.form__option-ticket {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+}
+
 .form__input_date::after,
 .form__input_time::after,
 .form__select-wrapper::after {
