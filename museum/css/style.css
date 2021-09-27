@@ -1087,6 +1087,7 @@ input {
 
     border: 1px solid #666666;
     border-radius: 50%;
+
     cursor: pointer;
 }
 
@@ -1098,6 +1099,8 @@ input {
     display: block;
     width: 48px;
     height: 48px;
+
+    transition: 0.3s;
 }
 
 .icon-round_youtube {
@@ -1150,6 +1153,8 @@ input {
     letter-spacing: 2px;
     text-decoration: none;
     color: #FFFFFF;
+
+    transition: 0.3s;
 }
 
 .footer__github:hover {
@@ -1299,17 +1304,17 @@ input {
     color: transparent;
 }
 
-.form__input_date-text {
+/* .form__input_date-text {
     position: absolute;
     top: 13px;
     left: 45px;
-}
+} */
 
-.form__input_time-text {
+/* .form__input_time-text {
     position: absolute;
     top: 13px;
     left: 260px;
-}
+} */
 
 .form__input_date::before {
     content: '';
@@ -1705,6 +1710,13 @@ input {
 .card__frontside-month,
 .card__frontside-year {
     width: 100px;
+}
+
+.card__frontside-month::-webkit-inner-spin-button,
+.card__frontside-month::-webkit-outer-spin-button,
+.card__frontside-year::-webkit-inner-spin-button,
+.card__frontside-year::-webkit-outer-spin-button {
+    opacity: 1;
 }
 
 .card__backside {
