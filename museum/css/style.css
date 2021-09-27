@@ -97,6 +97,8 @@ input {
     line-height: 31px;
     letter-spacing: 5px;
     color: #FFFFFF;
+
+    transition: 0.3s;
 }
 
 .logo__icon {
@@ -105,6 +107,8 @@ input {
     height: 26px;
     margin-right: 13px;
     background-image: url(../assets/svg/museum-icon.svg);
+
+    transition: 0.3s;
 }
 
 .header__title {
@@ -292,6 +296,7 @@ input {
     flex-direction: row;
     justify-content: space-between;
     gap: 0 25px;
+
 }
 
 .slider__pagination-item {
@@ -303,6 +308,7 @@ input {
 
 .slider__pagination-item {
     background: url(../assets/svg/welcome-slider/slide-pagination.svg);
+    transition: 0.3s;
 }
 
 .slider__pagination-item_active {
@@ -327,6 +333,8 @@ input {
 
     border: none;
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .slider__button-left {
@@ -458,6 +466,8 @@ input {
     text-transform: uppercase;
 
     position: relative;
+
+    transition: color 0.3s;
 }
 
 .tour__title::after {
@@ -581,6 +591,7 @@ input {
     border: none;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .video__play-button:hover {
@@ -612,6 +623,7 @@ input {
     border: none;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .player-controls__play-button-small:hover {
@@ -626,9 +638,10 @@ input {
     border: none;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.player-controls__sound-button {
+.player-controls__sound-button:hover {
     background: url(../assets/svg/player/player-sound-hover.svg);
 }
 
@@ -640,9 +653,10 @@ input {
     border: none;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.player-controls__fullscreen-button {
+.player-controls__fullscreen-button:hover {
     background: url(../assets/svg/player/player-fullscreen-hover.svg);
 }
 
@@ -652,6 +666,7 @@ input {
     margin: 0 50px;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .player-controls__volume {
@@ -659,6 +674,7 @@ input {
     margin: 0 50px;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .video__playlist {
@@ -691,6 +707,7 @@ input {
     height: 12px;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .video-slider__pagination {
@@ -712,6 +729,7 @@ input {
 
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .video-slider__button-left {
@@ -836,6 +854,7 @@ input {
     position: relative;
 
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .ticket-type__label:hover {
@@ -896,6 +915,7 @@ input {
     background-color: #fff;
     border: 0;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .amount__button:hover {
@@ -941,6 +961,10 @@ input {
     cursor: pointer;
 }
 
+.button:hover {
+    background: #9D8665;
+}
+
 .button_dark {
     background: #000000;
     border-radius: 2px;
@@ -976,6 +1000,8 @@ input {
 
 .contacts__item {
     margin-bottom: 25px;
+
+    transition: 0.5s;
 }
 
 .contacts__link {
@@ -984,8 +1010,6 @@ input {
     text-decoration: none;
     line-height: 26px;
     color: #000000;
-
-    transition: 0.2s;
 }
 
 .contacts__link:hover {
@@ -1265,7 +1289,8 @@ input {
     width: 190px;
 }
 
-.form__input_date::-webkit-calendar-picker-indicator {
+.form__input_date::-webkit-calendar-picker-indicator,
+.form__input_time::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
 
@@ -1340,6 +1365,7 @@ input {
     position: absolute;
 
     background: url(../assets/svg/form/arrow.svg) no-repeat;
+    cursor: pointer;
 }
 
 .form__tickets {
@@ -1423,9 +1449,9 @@ input {
 
 .form__tickets-value {
     width: 35px;
-    padding-left: 12px;
+    padding: 0;
 
-    text-align: center;
+    text-align: end;
     border: none;
 
     font-family: Roboto;
@@ -1550,14 +1576,17 @@ input {
     margin-right: 10px;
 
     display: inline-block;
+
+    position: relative;
+    top: 2px;
 }
 
 .form__cost-basic::before {
-    background: url(../assets/svg/form/tickets-value.svg);
+    background: url(../assets/svg/form/tickets-value.svg) center no-repeat;
 }
 
 .form__cost-senior::before {
-    background: url(../assets/svg/form/tickets-value.svg);
+    background: url(../assets/svg/form/tickets-value.svg) center no-repeat;
 }
 
 .form__total-info{
@@ -1716,8 +1745,7 @@ input {
     width: 220px;
     height: 45px;
     margin-top: 26px;
-
-    float: right;
+    margin-left: 250px;
 
     background: #710707;
     opacity: 0.9;
