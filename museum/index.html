@@ -174,7 +174,7 @@
                     <div class="layout-2-columns">
                         <h2 class="section__title section__title_gold">Video journey</h2>
                         <div class="video__content">
-                            <p class="section__text">
+                            <p class="section__text video__text">
                                 Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code
                             </p>
                         </div>
@@ -236,15 +236,13 @@
                     <h2 class="section__title section__title_gold">Buy tickets</h2>
                     <div class="section__strip"></div>
                     <div class="layout-2-columns">
-                        <img class="tickets__img" src="../museum/assets/img/buy-tickets_img.jpg" alt="buy-tickets">
+                        <img class="tickets__img" src="assets/img/buy-tickets_img.jpg" alt="buy-tickets">
 
                         <div class="tickets__content">
                             <div class="ticket-type">
                                 <p class="section__subtitle">Ticket Type</p>
-                            
-<!-- -------------------------------------------------------------- -->
 
-                                <!-- <div class="ticket-type__item">
+                                <div class="ticket-type__item">
                                     <input class="ticket-type__choice" type="radio" name="ticket-type" value="permanent" id="ticketPermanent" checked>
                                     <label class="ticket-type__label" for="ticketPermanent">Permanent exhibition</label>
                                 </div>
@@ -257,10 +255,9 @@
                                 <div class="ticket-type__item">
                                     <input class="ticket-type__choice" type="radio" name="ticket-type" value="combined" id="ticketCombined">
                                     <label class="ticket-type__label" for="ticketCombined">Combined Admission</label>
-                                </div> -->
-
+                                </div>
                             </div>
-<!-- -------------------------------------------------------------- -->
+
                             <div class="amount">
                                 <p class="section__subtitle">Amount</p>
 
@@ -282,7 +279,7 @@
                                     <div class="amount__total">Total &#8364;</div>
                                 </div>
 
-                                <button class="button button_dark button_block" type="button">Buy Now</button>
+                                <button class="button button_dark button_block" type="button" id="buyTickets">Buy Now</button>
                             </div>
                      </div>
                  </div>
@@ -314,7 +311,7 @@
                             </ul>
                         </div>
 
-                        <img class="contacts__map" src="assets/img/map.jpg"></img>
+                        <img class="contacts__map" src="assets/img/map.jpg">
                     </div>
                 </div>
             </div>
@@ -352,7 +349,7 @@
                                     <a class="nav__link" href="#contacts" >Contacts</a>
                                 </li>
                             </ul>
-                        </nav>       
+                        </nav>
                     </div>
 
                     <ul class="contacts footer__contacts">
@@ -397,6 +394,150 @@
         </div>
     </footer>
 
+    <!-- ----------------------- MODAL ------------------------------- -->
+    <div class="modal">
+        <div class="modal__inner">
+            <div class="modal__content">
+                <form class="form" action="#" method="POST">
+                    <div class="layout-2-columns">
+
+                        <div class="form__left-col">
+                            <div class="form__header">
+                                <div class="icon form__logo"></div>
+                                <h3 class="form__title">Booking tickets</h3>
+                                <h4 class="form__subtitle">Tour to Louvre</h4>
+                            </div>    
+
+                            <div class="form__content">
+                                <div class="form__group">
+                                    <input class="form__input form__input_date" type="date" name="date">
+                                    <input class="form__input form__input_time" type="time" name="time">
+                                    <span class="form__input_date-text">Date</span>
+                                    <span class="form__input_time-text">Time</span>
+                                </div>
+
+                                <input class="form__input form__input_name" type="text" name="name" placeholder="Name">
+                                <input class="form__input form__input_mail" type="email" name="mail" placeholder="E-mail">
+                                <input class="form__input form__input_phone" type="tel" name="tel" placeholder="Phone">
+                                
+                                <div class="form__select-wrapper">
+                                    <select class="form__input form__select-ticket" name="ticket-ttype" >
+                                    <option selected disabled>Ticket Type</option>
+                                    <option value="permanent">Permanent exhibition</option>
+                                    <option value="temporary">Temporary exhibition</option>
+                                    <option value="combined">Combined Admission</option>
+                                    </select>
+                                </div>
+
+                                <div class="form__tickets">
+                                    <p class="form__tickets-info">Entry ticket</p>
+                                    <div class="form__tickets-group">
+                                        <div class="form__tickets-details">
+                                            <div class="form__tickets-inner">
+                                                <label class="form__tickets-age" for="basic-form">Basic 18+ (20 €)</label>
+                                                <div class="form__tickets-value-choose">
+                                                    <button class="form__tickets-button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
+                                                    <input class="form__tickets-value" type="number" min="0" max="20" value="1"  id="basic-form" readonly >
+                                                    <button class="form__tickets-button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form__tickets-details">
+                                            <div class="form__tickets-inner">
+                                                <label class="form__tickets-age" for="senior-form">Senior 65+ (10 €)</label>
+                                                <div class="form__tickets-value-choose">
+                                                    <button class="form__tickets-button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
+                                                    <input class="form__tickets-value" type="number" min="0" max="20" value="1" id="senior-form" readonly >
+                                                    <button class="form__tickets-button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                                </div>
+                                            </div>   
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__right-col">
+                            <div class="form__overview">
+                                <p class="form__overview-title">Overview</p>
+                                <p class="form__overview-subtitle">Tour to Louvre</p>
+                                <p class="form__overview-date">Friday, August 19</p>
+                                <p class="form__overview-time">16 : 30</p>
+                                <p class="form__overview-ticket">Temporary exhibition</p>
+                                
+                                <div class="form__overview-image"></div>
+
+                                <div class="form__cost-info">
+                                    <div class="form__cost-details">
+                                        <p class="form__cost-basic">Basic (20 €)</p>
+                                        <p class="form__cost-basic-price">40 €</p>
+                                    </div>
+
+                                    <div class="form__cost-details">
+                                        <p class="form__cost-senior">Senior (10 €)</p>
+                                        <p class="form__cost-senior-price">20 €</p>
+                                    </div>
+
+                                    <div class="form__total-info">
+                                            <p class="form__cost-total">Total:</p>
+                                            <p class="form__cost-total-price">60 €</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__frontside">
+                                    <div class="card__frontside-inner">
+                                        <div class="card__frontside-left-col">
+                                            <label class="card__frontside-text">Card number
+                                                <input class="card__frontside-number" type="text">
+                                            </label>
+        
+                                            <label class="card__frontside-text">Expiration date
+                                                <div class="layout-2-columns">
+                                                    <input class="card__frontside-month" type="number" value="03" min="01" max="12">
+                                                    <input class="card__frontside-year" type="number" value="2023" min="2013" max="2033">
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="card__frontside-right-col">
+                                            <div class="card__frontside-visa"></div>
+                                            <div class="card__frontside-mastercard"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <label class="card__frontside-text">Cardholder name
+                                        <input class="card__frontside-name" type="text">
+                                    </label>
+
+                                </div>
+
+                                <div class="card__backside">
+                                    <div class="card__backside-magnet"></div>
+                                    <div class="card__backside-content">
+                                        <label class="card__backside-text" for="cardCode">CVC/CVV</label>
+                                        <input class="card__backside-code" type="number" id="cardCode">
+                                        <p class="card__backside-help">The last 3 or 4 digits on back of the card</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="button form__button" type="submit">Book</button>
+                        </div>
+                    </div>    
+                </form>
+            </div>
+
+            <button class="icon modal__close"></button>
+        </div>  
+    </div>
+    <!-- -------------------------------------------------------------- -->
+
     <script src="js/gallery.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>

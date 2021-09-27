@@ -36,7 +36,7 @@ ul, ol {
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -70,10 +70,10 @@ input {
     align-items: center;
 }
 
-/* .icon {
+.icon {
     border: none;
     cursor: pointer;
-} */
+}
 
 
 /* --------- Header ---------*/
@@ -106,7 +106,7 @@ input {
     display: inline-block;
     width: 49px;
     height: 26px;
-    margin-right: 15px;
+    margin-right: 13px;
     background-image: url(../assets/svg/museum-icon.svg);
 }
 
@@ -289,10 +289,28 @@ input {
 
 .slider__num-now,
 .slider__num-all {
-    width: 25px;
-    height: 40px;
+    /* width: 25px; */
+    width: 40px;
 
-    all: unset;
+    height: 40px;
+    padding: 0 0 0 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    border: none;
+    background-color: #030303;
+}
+
+.slider__num-delim {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .slider__pagination {
@@ -420,7 +438,6 @@ input {
     width: 100%;
     max-width: 440px;
     height: 424px;
-    /* margin-bottom: 75px; */
     display: block;
 
     text-decoration: none;
@@ -460,7 +477,7 @@ input {
 
     position: absolute;
     left: 0px;
-    bottom: -10px;
+    bottom: -12px;
 
     background: #710707;
 
@@ -491,6 +508,7 @@ input {
 }
 
 .explore__slider {
+    margin-top: 15px;
     position: relative;
 }
 
@@ -538,8 +556,12 @@ input {
     width: 100%;
 }
 
+.video__text {
+    padding-top: 7px;
+}
+
 .video__player {
-    margin-top: 75px;
+    margin-top: 50px;
 
     display: flex;
     flex-direction: column;
@@ -696,7 +718,7 @@ input {
 }
 
 .gallery-pictures {
-    height: 2035px;
+    height: 1960px;
     margin-top: 75px;
 
     position: relative;
@@ -759,49 +781,37 @@ input {
     margin-left: 60px;
 }
 
-/* ============================= */
-
-/* 
 .ticket-type__item {
-    margin-top: 25px;
-    display: block;
-
-    line-height: 26px;
-
-    cursor: pointer;
-}
-
-.ticket-type__type{
-    display: block;
-}
-
-.ticket-type__type::before {
-    content: '';
-    display: inline-block;
-
-    width: 17px;
-    height: 17px;
-
-    border: 2px solid #000000;
-    border-radius: 50%;
+    margin-bottom: 25px;
 }
 
 .ticket-type__choice {
-    border: 0; 
-    clip: rect(0 0 0 0); 
-    height: 1px; margin: -1px; 
-    overflow: hidden; 
-    padding: 0; 
-    position: absolute; 
-    width: 1px;
+    display: none;
 }
 
-.ticket-type__choice:checked .ticket-type__type::before {
-    background: #000000;
-} */
+.ticket-type__label::before{
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 17px;
 
+	position: absolute;
+    top: 5px;
+	left: 0;
 
-/* ============================= */
+	background: url(../assets/svg/form/radio.svg) no-repeat;
+}
+
+.ticket-type__choice:checked + .ticket-type__label::before{
+	background: url(../assets/svg/form/radio-checked.svg) no-repeat;
+}
+
+.ticket-type__label {
+    padding-left: 40px;
+    position: relative;
+
+    cursor: pointer;
+}
 
 .amount {
     width: 100%;
@@ -811,13 +821,12 @@ input {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
 }
 
 .amount__tickets {
     width: 150px;
     margin-top: -25px;
-    margin-bottom: 52px;
+    margin-bottom: 57px;
 }
 
 .amount__total {
@@ -832,11 +841,12 @@ input {
 .amount__total::after{
     content: "220";
     display: inline-block;
+
+    margin-left: -2px;
 }
 
 .amount__calc {
-    /* width: 150px; */
-    width: 100%;
+    width: 150px;
     height: 50px;
     margin-bottom: 10px;
 
@@ -847,18 +857,30 @@ input {
 }
 
 .amount__button {
+    width: 50px;
+    height: 100%;
+    padding: 0;
+
     font-size: 32px;
     line-height: 37px;
-    /* padding: 0 14px; */
 
+    background-color: #fff;
     border: 0;
-
     cursor: pointer;
 }
 
 .amount__value {
-    all: unset;
+    width: 50px;
+    padding-left: 12px;
+
     text-align: center;
+    border: none;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
 }
 
 .amount__tickets-age {
@@ -954,28 +976,30 @@ input {
 .footer__content {
     width: 100%;
     height: 265px;
-    padding: 86px 0 50px 0;
+    padding: 85px 0 50px 0;
+
 }
 
 .footer__logo {
-    margin-right: 145px;
+    margin-right: 150px;
 }
 
 .footer__nav {
+    display: inline-block;
     width: 363px;
-    height: 128px;
+    height: 135px;
 
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between
+    column-count: 2;
+    column-gap: 150px;
 }
 
 .footer__nav-item {
-    height: 33.3%;
+    margin-bottom: 25px;
 }
 
 .footer__contacts {
     width: 340px;
+    margin-bottom: 5px;
 
     display: flex;
     flex-direction: row;
@@ -1057,4 +1081,617 @@ input {
 
 .icon-round_pinterest:hover {
     background: url(../assets/svg/contacts/icon-pinterest-gold.svg);
+}
+
+
+
+
+/* --------- Modal Form ---------*/
+
+.modal {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: -100%;
+
+    background-color: rgba(0, 0, 0, 0.747);
+    z-index: 20;
+
+    transition: 1s ease-in-out;;
+}
+
+.modal.show {
+    /* display: flex; */
+    left: 0;
+}
+
+.modal__inner {
+    width: 1440px;
+    height: 845px;
+
+    position: relative;
+
+    background: #FFFFFF;
+    z-index: 400;
+}
+
+.modal__content {
+    width: 970px;
+    height: 663px;
+    margin: 0 auto;
+    padding: 91px 0;
+}
+
+.form__left-col {
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form__header {
+    margin-bottom: 60px;
+
+    border-bottom: #740C11 2px solid;
+    opacity: 0.9;;
+}
+
+.form__logo {
+    width: 85px;
+    height: 41px;
+
+    background: url(../assets/svg/form/form-logo.svg);
+}
+
+.form__title {
+    margin-bottom: 15px;
+
+    font-family: Forum;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: #9D8665;
+}
+
+.form__subtitle {
+    margin-bottom: 10px;
+
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #710707;
+}
+
+.form__group {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+}
+
+.form__input {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+
+    position: relative;
+    
+    border: 1px solid #030303;
+}
+
+.form__input::placeholder {
+    color: #030303;
+}
+
+.from__input_date,
+.form__input_time,
+.form__input_name,
+.form__input_mail,
+.form__input_phone,
+.form__select-ticket {
+    padding: 12px 45px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+}
+
+.form__input_date,
+.form__input_time {
+    width: 190px;
+}
+
+.form__input_date::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.form__input_date::-webkit-datetime-edit,
+.form__input_time::-webkit-datetime-edit {
+    color: transparent;
+}
+
+.form__input_date-text {
+    position: absolute;
+    top: 13px;
+    left: 45px;
+}
+
+.form__input_time-text {
+    position: absolute;
+    top: 13px;
+    left: 260px;
+}
+
+.form__input_date::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    top: 14px;
+    left: 15px; 
+    display: inline-block;
+
+    position: absolute;
+
+    background: url(../assets/svg/form/date.svg)  no-repeat;
+}
+
+.form__input_time {
+    background: url(../assets/svg/form/time.svg) left 15px center no-repeat;
+}
+
+.form__input_name {
+    background: url(../assets/svg/form/name.svg) left 15px center no-repeat;
+}
+
+.form__input_mail {
+    background: url(../assets/svg/form/email.svg) left 15px center no-repeat;
+}
+
+.form__input_phone {
+    background: url(../assets/svg/form/tel.svg) left 15px center no-repeat;
+}
+
+.form__select-ticket {
+    background: url(../assets/svg/form/ticket-type.svg) left 15px center no-repeat;
+}
+
+.form__select-ticket {
+    -webkit-appearance:none;
+}
+
+.form__select-wrapper {
+    position: relative;
+}
+
+.form__input_date::after,
+.form__input_time::after,
+.form__select-wrapper::after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    top: 14px;
+    right: 15px; 
+    display: inline-block;
+
+    position: absolute;
+
+    background: url(../assets/svg/form/arrow.svg) no-repeat;
+}
+
+.form__tickets {
+    width: 100%;
+    height: 135px;
+    padding: 10px 15px 15px 15px;
+    border: 1px solid #030303;
+    box-sizing: border-box;
+}
+
+.form__tickets-info {
+    position: relative;
+
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #9D8665;
+}
+
+.form__tickets-info::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    display: block;
+
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+    background: #740C11;
+    opacity: 0.9;
+}
+
+.form__tickets-details {
+    width: 100%;
+    height: 25px;
+    margin-top: 19px;
+}
+
+.form__tickets-age {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;    
+}
+
+.form__tickets-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__tickets-value-choose {
+    width: 105px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+
+    border: 1px solid #000000; 
+}
+
+.form__tickets-button {
+    width: 35px;
+    height: 100%;
+    font-size: 19px;
+    line-height: 25px;
+    padding: 0 12px;
+
+    border: 0;
+
+    cursor: pointer;
+    color: white;
+    background: #000;
+}
+
+.form__tickets-value {
+    width: 35px;
+    padding-left: 12px;
+
+    text-align: center;
+    border: none;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+}
+
+.form__right-col {
+    width: 530px;
+    padding: 25px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #030303;
+}
+
+.form__overview {
+    margin-bottom: 10px;
+
+    position: relative;
+}
+
+.form__overview-title {
+    margin-bottom: 2px;
+
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: #272727;
+}
+
+.form__overview-subtitle {
+    margin-bottom: 10px;
+
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #740C11;
+    
+    opacity: 0.9;
+}
+
+.form__overview-date,
+.form__overview-time,
+.form__overview-ticket {
+    margin-bottom: 5px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+}
+
+.form__overview-date::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+
+    display: inline-block;
+
+    background: url(../assets/svg/form/date.svg);
+}
+
+.form__overview-time::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+
+    display: inline-block;
+
+    background: url(../assets/svg/form/time.svg);
+}
+
+.form__overview-ticket::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+
+    display: inline-block;
+
+    background: url(../assets/svg/form/check.svg);
+}
+
+.form__overview-image {
+    width: 150px;
+    height: 120px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background: url(../assets/img/form-overview-img.jpg);
+}
+
+.form__cost-info {
+    width: 100%;
+    height: 117px;
+    margin-top: 22px;
+    margin-bottom: 3px;
+}
+
+.form__cost-details {
+    margin-bottom: 5px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__cost-basic::before,
+.form__cost-senior::before {
+    content: "";
+    width: 32px;
+    height: 20px;
+    margin-right: 10px;
+
+    display: inline-block;
+}
+
+.form__cost-basic::before {
+    background: url(../assets/svg/form/tickets-value.svg);
+}
+
+.form__cost-senior::before {
+    background: url(../assets/svg/form/tickets-value.svg);
+}
+
+.form__total-info{
+    width: 100%;
+    height: 48px;
+    margin-top: 9px;
+    padding-top: 9px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+    color: #030303;
+
+    border-top: 2px solid #740C11;;
+}
+
+.form__cost-total-price {
+    font-weight: 500;
+}
+
+.card {
+    width: 100%;
+    height: 241px;
+
+    position: relative;
+
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.card__frontside,
+.card__backside {
+    width: 360px;
+    height: 211px;
+}
+
+.card__frontside {
+    padding: 15px 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: #BCBCBC;
+    z-index: 2;
+}
+
+.card__frontside-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__frontside-left-col {
+    width: 215px;
+}
+
+.card__frontside-visa {
+    width: 55px;
+    height: 16px;
+    margin-top: 19px;
+
+    background: url(../assets/svg/form/Visa.svg);
+}
+
+.card__frontside-mastercard {
+    width: 53px;
+    height: 32px;
+    margin-top: 15px;
+
+    background: url(../assets/svg/form/Mastercard.svg);
+}
+
+.card__frontside-text {
+    display: block;
+
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #161615;
+}
+
+.card__frontside-number,
+.card__frontside-name  {
+    display: block;
+}
+
+.card__frontside-number,
+.card__frontside-month,
+.card__frontside-year,
+.card__frontside-name {
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.card__frontside-number,
+.card__frontside-name {
+    width: 100%;
+}
+
+.card__frontside-month,
+.card__frontside-year {
+    width: 100px;
+}
+
+.card__backside {
+    padding: 25px 0 15px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background: #939393;
+    z-index: 1;
+}
+
+.card__backside-magnet {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+
+    background: #161615;
+}
+
+.card__backside-content {
+    width: 75px;
+    height: 110px;
+    margin-top: 15px;
+    margin-left: 265px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__backside-code {
+    width: 100%;
+    height: 30px;
+}
+.card__backside-help {
+    width: 55px;
+    height: 50px;
+
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.form__button {
+    width: 220px;
+    height: 45px;
+    margin-top: 26px;
+
+    float: right;
+
+    background: #710707;
+    opacity: 0.9;
+}
+
+.modal__close {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    background: url(../assets/svg/form/form-close.svg);
+    border: none;
+
+    transition: 0.5s;
+}
+
+.modal__close:hover {
+    transform: rotate(180deg);
 }
