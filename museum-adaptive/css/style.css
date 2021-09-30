@@ -45,7 +45,8 @@ input {
 
 .container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1480px;
+    padding: 0 20px;
     height: 100%;
     margin: 0 auto;
 
@@ -54,6 +55,8 @@ input {
 
 .layout-2-columns {
     height: 100%;
+
+    position: relative;
 
     display: flex;
     justify-content: space-between;
@@ -71,6 +74,7 @@ input {
     border: none;
     cursor: pointer;
 }
+
 
 
 /* --------- Header ---------*/
@@ -157,6 +161,12 @@ input {
     background-color: #030303;
 }
 
+.welcome__inner {
+    height: 100%;
+
+    position: relative;
+}
+
 .welcome__poster {
     width: 1000px;
     height: 750px;
@@ -167,6 +177,7 @@ input {
     z-index: 2;
 
     background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/1.jpg);
+    background-size: cover;
 }
 
 
@@ -174,7 +185,9 @@ input {
     width: 100%;
     max-width: 598px;
     height: 388px;
-    margin-top: 150px;
+    padding-top: 150px;
+
+    position: relative;
 
     color: #FFFFFF;
     z-index: 5;
@@ -227,11 +240,10 @@ input {
 }
 
 .welcome__slider {
-    width: 100%;
-    max-width: 600px;
-    height: 120px;
 
-    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 
     background: #030303;
     z-index: 5;
@@ -240,13 +252,16 @@ input {
 /* --------- Welcome Slider  ---------*/
 
 .slider {
-    width: 100%;
+    width: 600px;
+    height: 120px;
+
     padding: 0 75px;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 0 45px;
 
     font-family: Roboto;
     font-style: normal;
@@ -255,7 +270,6 @@ input {
     line-height: 40px;    
     text-transform: uppercase;
     text-align: center;
-    
     color: #FFFFFF;
 }
 
@@ -264,34 +278,21 @@ input {
     height: 40px;
 
     display: flex;
+    justify-content: space-between;
 }
 
 .slider__num-now,
 .slider__num-all {
     width: 25px;
     height: 40px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    text-align: center;
-    line-height: 40px;
-    text-transform: uppercase;
-    color: #ffffff;
 }
 
-.slider__num-delim {
-    margin-left: 10px;
-    margin-right: 10px;
-}
 
 .slider__pagination {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 0 25px;
-
 }
 
 .slider__pagination-item {
@@ -325,6 +326,8 @@ input {
 .slider__button-right {
     width: 30px;
     height: 8px;
+    padding: 0;
+    margin: 0;
 
     border: none;
     cursor: pointer;
@@ -490,6 +493,7 @@ input {
     line-height: 21px;
 }
 
+
 /* --------- Explore ---------*/
 
 .explore__content {
@@ -596,7 +600,8 @@ input {
 }
 
 .player-controls__inner {
-    width: 1380px;
+    width: 100%;
+    max-width: 1380px;
     height: 100%;
     margin: 0 auto;
 
@@ -1162,7 +1167,7 @@ input {
 
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -1000%;
 
     background-color: rgba(0, 0, 0, 0.747);
     z-index: 20;
@@ -1766,4 +1771,414 @@ input {
 
 .modal__close:hover {
     transform: rotate(180deg);
+}
+
+
+
+/* --------- Media Queries ---------*/
+
+
+@media (max-width: 1024px) {
+
+    /* --------- Header ---------*/
+
+    .header__inner {
+        height: 130px;
+    }
+
+    /* --------- Welcome ---------*/
+    .welcome__section {
+        height: 585px;
+    }    
+
+    .welcome__poster {
+        width: 700px;
+        height: 525px; 
+    }
+    
+    .welcome__content {
+        width: 100%;
+        max-width: 400px;
+        height: 180px;
+        padding-top: 50px;
+    }
+
+    .welcome__title {
+        font-size: 50px;
+    }
+    
+    .welcome__text {
+        margin-bottom: 50px;
+    
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .welcome__link-button {
+        width: 300px;
+        height: 60px;
+        padding: 20px 40px;
+    
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .slider {
+        width: 700px;
+
+        font-size: 20px;
+        padding-left: 225px;
+    }
+
+    .slider__pagination-item {
+        width: 12px;
+        height: 12px;
+    }
+
+    
+    /* --------- Main Sections ---------*/
+
+    .section__title {
+        margin-bottom: 20px;
+    
+        font-size: 50px;
+        line-height: 75px;
+    }
+
+    .section__subtitle {
+        margin-bottom: 0;
+    }
+        
+    .section__strip {
+        margin-bottom: 60px;
+    }
+
+    .section__text {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    
+    
+    /* --------- Tour ---------*/
+
+    .tour {
+        gap: 60px 108px;
+    }   
+
+    .tour__card {
+        width: 330px;
+        height: 345px;
+    }
+
+
+    .tour__title {
+        font-size: 28px;
+        line-height: 31px;
+        letter-spacing: 3px;
+    }
+
+    .tour__title::after {
+        width: 150px;
+    }
+
+    .tour__subtitle {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .tour__text {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    /* --------- Contacts ---------*/
+
+    .contacts__subtitle {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    /* --------- Footer ---------*/
+    /* ---------  ---------*/
+    /* ---------  ---------*/
+}
+
+
+
+/* @media (max-width: 768px) { */
+
+@media (max-width: 870px) {
+
+    /* --------- Header ---------*/
+
+    .header__inner {
+        height: 110px;
+    }
+
+    .logo {
+        line-height: 50px;
+    }
+
+    /* --------- Navigation ---------*/
+
+    .nav__link {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    /* --------- Welcome ---------*/
+
+    .welcome__section {
+        height: 861px;
+    }    
+
+    .welcome__inner {
+        height: 100%;
+    
+        position: relative;
+    
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center
+
+    }
+
+    .welcome__poster {
+        width: 100%;
+        height: 100%;
+        max-width: 726px;
+        max-height: 546px;
+
+        position: static;
+        background: url(../assets/img/welcome-slider/1.jpg);
+        background-size: cover;
+    }
+    
+
+    .welcome__content {
+        height: auto;
+        padding: 0;
+
+        text-align: center;
+    }
+
+    .welcome__title {
+        font-size: 40px;
+        line-height: 60px;
+    }
+    
+    .welcome__text {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .welcome__link-button {
+        display: none;
+    }
+
+    .welcome__slider {
+        margin: 30px 0;
+
+        position: static;
+        align-self: center;
+    }    
+
+    .slider {
+        width: 100%;
+        max-width: 400px;
+        height: 40px;
+        padding: 0;
+    }
+
+
+    
+    /* --------- Main Sections ---------*/
+
+    .section__title {
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .section__subtitle {
+        margin-bottom: 40px;
+    }
+        
+    .section__strip {
+        margin-bottom: 40px;
+    }
+
+    /* --------- Tour ---------*/
+
+    .tour {
+        gap: 40px 56px;
+    }   
+
+    .tour__card {
+        width: 280px;
+        height: 301px;
+    } 
+
+    .tour__title {
+        font-size: 22px;
+        line-height: 24px;
+        letter-spacing: 3px;
+    }
+
+    .tour__subtitle {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    /* --------- Contacts ---------*/
+
+    .contacts__subtitle {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .contacts__link {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    /* --------- Footer ---------*/
+
+
+    /* ---------  ---------*/
+    /* ---------  ---------*/
+}
+
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    /* --------- Header ---------*/
+
+    .header__inner {
+        height: 90px;
+    }
+
+    .logo {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    /* --------- Navigation ---------*/
+
+    .nav__link {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    /* --------- Welcome ---------*/
+
+    .welcome__section {
+        height: 544px;
+    }    
+    
+    .welcome__poster {
+        width: 380px;
+        height: 285px; 
+    }
+
+    .welcome__title {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    
+    .welcome__text {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .welcome__slider {
+        margin: 20px 0;
+    }
+
+    .slider {
+        gap: 0 25px;
+
+        max-width: 230px;
+        font-size: 16px;
+    }
+
+    .slider__num {
+        width: 50px;
+        height: 40px;
+    }
+
+    .slider__pagination {
+        gap: 0 10px;
+    }
+
+    .slider__pagination-item {
+        width: 7px;
+        height: 7px;
+    }
+
+    .slider__controls {
+        width: 55px;
+    }
+
+    .slider__button-left,
+    .slider__button-right {
+        width: 20px;
+    }
+    
+    
+    /* --------- Main Sections ---------*/
+
+    .section__title {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .section__subtitle {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    /* --------- Tour ---------*/
+
+    
+    .tour {
+        gap: 40px 50px;
+    }  
+
+    .tour__card {
+        height: 295px;
+    }
+
+    .tour__title {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .tour__subtitle {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    /* --------- Contacts ---------*/
+
+    .contacts__subtitle,
+    .contacts__link {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    /* --------- Footer ---------*/
+
+    .footer__info {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    /* ---------  ---------*/
+    /* ---------  ---------*/
 }
