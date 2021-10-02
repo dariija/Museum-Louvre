@@ -18,10 +18,12 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a class="logo" href="https://www.louvre.fr/" target="_blank">
-                    <span class="logo__icon"></span>
-                    <h1 class="header__title">Louvre</h1>
-                </a>
+                <div class="logo">
+                    <a class="logo__link" href="https://www.louvre.fr/" target="_blank">
+                        <span class="logo__icon"></span>
+                        <h1 class="header__title">Louvre</h1>
+                    </a>
+                </div>
 
                 <nav class="nav header__nav">
                     <ul class="nav__list">
@@ -145,19 +147,29 @@
         <section class="explore" id="explore">
             <div class="section section_dark">
                 <div class="container">
-                    <div class="layout-2-columns">
+                    <div class="explore__inner">
                         <div class="explore__content">
                             <h2 class="section__title section__title_light">Picture explore</h2>
                             <div class="section__strip"></div>
-                            <p class="section__text section__text_light">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
-                            <p class="section__text section__text_light">It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
-                            <p class="section__text section__text_light">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                            <div class="explore__text-content">
+                                <p class="section__text section__text_light">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                                <p class="section__text section__text_light">It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
+                                <p class="section__text section__text_light text-hidden-1024">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                            </div>
                         </div>
 
-                        <div class="explore__slider picture-slider">
-                            <img class="picture-slider__img-before" src="assets/img/explore-slider/half-before.jpg" alt="before"> 
-                            <span class="picture-slider__slider"></span>
-                            <img class="picture-slider__img-after" src="assets/img/explore-slider/after.jpg" alt="after"> 
+                        <div class="picture-slider explore__slider">
+                            <div class="picture-slider__img-comp">
+                                <!-- <img class="picture-slider__img" src="assets/img/explore-slider/after.jpg" alt="after">  -->
+                                <div class="picture-slider__img-after" src="assets/img/explore-slider/after.jpg" alt="after"> </div>
+
+                            </div>
+                            <div class="picture-slider__slider"></div>
+                            <div class="picture-slider__img-comp picture-slider__img-overlay">
+                                <!-- <img class="picture-slider__img" src="assets/img/explore-slider/before.jpg" alt="before">  -->
+                                <div class="picture-slider__img-before" src="assets/img/explore-slider/before.jpg" alt="before"> </div>
+
+                            </div>
                         </div>
                     </div> 
                 </div>       
@@ -231,10 +243,11 @@
                 <div class="container">
                     <h2 class="section__title section__title_gold">Buy tickets</h2>
                     <div class="section__strip"></div>
-                    <div class="layout-2-columns">
-                        <img class="tickets__img" src="assets/img/buy-tickets_img.jpg" alt="buy-tickets">
-
+                    <div class="layout-3-columns">
                         <div class="tickets__content">
+                            <!-- <img class="tickets__img" src="assets/img/buy-tickets_img.jpg" alt="buy-tickets"> -->
+                            <div class="tickets__img"></div>
+
                             <div class="ticket-type">
                                 <p class="section__subtitle">Ticket Type</p>
 
@@ -255,24 +268,26 @@
                             </div>
 
                             <div class="amount">
-                                <p class="section__subtitle">Amount</p>
+                                <div class="amount__inner">
+                                    <p class="section__subtitle">Amount</p>
 
-                                <div class="amount__tickets">
-                                    <label class="amount__tickets-age" for="basic">Basic 18+</label>
-                                    <div class="amount__calc">
-                                        <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
-                                        <input class="amount__value" type="number" min="0" max="20" value="1"  id="basic" readonly >
-                                        <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                    <div class="amount__tickets">
+                                        <label class="amount__tickets-age" for="basic">Basic 18+</label>
+                                        <div class="amount__calc">
+                                            <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
+                                            <input class="amount__value" type="number" min="0" max="20" value="1"  id="basic" readonly >
+                                            <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                        </div>
+    
+                                        <label class="amount__tickets-age" for="senior">Senior 65+</label>
+                                        <div class="amount__calc">
+                                            <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
+                                            <input class="amount__value" type="number" min="0" max="20" value="1" id="senior" readonly >
+                                            <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                        </div>
+    
+                                        <div class="amount__total">Total &#8364;</div>
                                     </div>
-
-                                    <label class="amount__tickets-age" for="senior">Senior 65+</label>
-                                    <div class="amount__calc">
-                                        <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
-                                        <input class="amount__value" type="number" min="0" max="20" value="1" id="senior" readonly >
-                                        <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
-                                    </div>
-
-                                    <div class="amount__total">Total &#8364;</div>
                                 </div>
 
                                 <button class="button button_dark button_block" type="button" id="buyTickets">Buy Now</button>
@@ -291,7 +306,7 @@
                     <h2 class="section__title section__title_gold">Contacts</h2>
                     <div class="section__strip"></div>
                     
-                    <div class="layout-2-columns">
+                    <div class="contacts__inner">
                         <div class="contacts__content">
                             <p class="section__subtitle contacts__subtitle">Palais Royal <br/> Musee du Louvre</p>
 
@@ -318,14 +333,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
-                <div class="layout-2-columns">
-                    <div class="layout-2-columns">
-                        <a class="logo footer__logo" href="https://www.louvre.fr/" target="_blank">
-                            <span class="logo__icon"></span>Louvre
-                        </a>
+                <div class="footer__inner">
+                    <div class="footer__inner-navigation">
+                        <div class="logo">
+                            <a class="logo__link" href="https://www.louvre.fr/" target="_blank">
+                                <span class="logo__icon"></span>Louvre
+                            </a>
+                        </div>
 
                         <nav class="nav">
-                            <ul class="nav__list footer__nav">
+                            <ul class="footer__nav">
                                 <li class="nav__item footer__nav-item">
                                     <a class="nav__link" href="#visiting" >Visiting</a>
                                 </li>
@@ -350,27 +367,27 @@
                     </div>
 
                     <ul class="contacts footer__contacts">
-                        <li class="contacts__item contacts__item_icon">
+                        <li class="contacts__item-icon">
                             <a class="contacts__link" href="https://www.youtube.com/user/louvre" target="_blank">
                                 <span class="icon-round icon-round_youtube"></span>
                             </a>
                         </li>
-                        <li class="contacts__item contacts__item_icon">
+                        <li class="contacts__item-icon">
                             <a class="contacts__link" href="https://www.instagram.com/museelouvre/" target="_blank">
                                 <span class="icon-round icon-round_instagram"></span>
                             </a>
                         </li>
-                        <li class="contacts__item contacts__item_icon">
+                        <li class="contacts__item-icon">
                             <a class="contacts__link" href="https://www.facebook.com/museedulouvre" target="_blank">
                                 <span class="icon-round icon-round_facebook"></span>
                             </a>
                         </li>
-                        <li class="contacts__item contacts__item_icon">
+                        <li class="contacts__item-icon">
                             <a class="contacts__link" href="http://twitter.com/museelouvre" target="_blank">
                                 <span class="icon-round icon-round_twitter"></span>
                             </a>
                         </li>
-                        <li class="contacts__item contacts__item_icon">
+                        <li class="contacts__item-icon">
                             <a class="contacts__link" href="https://www.pinterest.fr/museedulouvre/" target="_blank">
                                 <span class="icon-round icon-round_pinterest"></span>
                             </a>
@@ -536,6 +553,7 @@
     <script src="js/gallery.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/explore-slider.js"></script>
 
 </body>
 </html>

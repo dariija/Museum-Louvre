@@ -92,7 +92,7 @@ input {
     color: #FFFFFF;
 }
 
-.logo {
+.logo__link {
     font-family: Forum;
     font-weight: normal;
     font-size: 28px;
@@ -496,47 +496,72 @@ input {
 
 /* --------- Explore ---------*/
 
+.explore__inner {
+    height: 100%;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+}
+
 .explore__content {
     max-width: 660px;
     width: 100%;
     margin-right: 60px;
+
+    flex: 1;
 }
 
 .explore__slider {
     margin-top: 15px;
-    position: relative;
 }
 
-.picture-slider__img-after {
+.picture-slider {
     width: 100%;
     max-width: 720px;
     height: 700px;
 
+    position: relative;
+}
+
+.picture-slider__img-comp {
+    position: absolute;
+    width: auto;
+    height: auto;
+
+    overflow: hidden;
+}
+
+.picture-slider__img-after {
+    width: 720px;
+    height: 700px;
+
+    background: url(../assets/img/explore-slider/after.jpg) no-repeat;
+    background-size: 100%;
 }
 
 .picture-slider__img-before {
-    width: 440px;
+    width: 720px;
     height: 700px;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    z-index: 1;
+    background: url(../assets/img/explore-slider/before.jpg) no-repeat;
+    background-size: 100%;
 }
 
 .picture-slider__slider {
     width: 39px;
-    height: 700px;
+    height: 100%;
 
     position: absolute;
     top: 0;
-    left: 421px;
+    left: 426px;
 
-    background: url(../assets/svg/explore-slider/explore-slider.svg);
+    background: url(../assets/svg/explore-slider/explore-slider.svg) no-repeat;
+    background-size: 100%;
+    background-position-y: 50%;
     z-index: 2;
 
     cursor: pointer;
+    /* transition: 0.3s; */
 }
 
 .picture-slider__slider:hover {
@@ -798,11 +823,18 @@ input {
 
 /* --------- Tickets ---------*/
 
-.tickets__img {
+/* .tickets__img {
     width: 100%;
     max-width: 720px;
     height: auto;
     max-height: 550px;
+} */
+
+.tickets__img {
+    width: 720px;
+    height: 550px;
+    background: url(../assets/img/buy-tickets_img.jpg);
+    background-size: 100%;
 }
 
 .tickets__content {
@@ -857,10 +889,16 @@ input {
 }
 
 .amount {
-    width: 100%;
-    max-width: 175px;
+    /* width: 100%; */
+    /* max-width: 175px; */
+    width: 175px;
     margin-left: 80px;
 
+    display: flex;
+    flex-direction: column;
+
+}
+.amount__inner {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -989,6 +1027,11 @@ input {
 
 /* --------- Contacts ---------*/
 
+.contacts__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
 .contacts__content{
     width: 282px;
 }
@@ -1025,6 +1068,25 @@ input {
     background-color: #030303;
 }
 
+.footer__inner {
+    /* height: 100%; */
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__inner-navigation {
+    /* height: 100%; */
+    width: 100%;
+    max-width: 703px;
+    position: relative;
+
+    display: flex;
+}
+
+
 .footer__content {
     width: 100%;
     height: 265px;
@@ -1032,21 +1094,21 @@ input {
 
 }
 
-.footer__logo {
-    margin-right: 150px;
+.logo {
+    margin-right: 145px;
 }
 
 .footer__nav {
-    display: inline-block;
-    width: 363px;
+    max-width: 363px;
+    width: 100%;
     height: 135px;
 
-    column-count: 2;
-    column-gap: 150px;
-}
-
-.footer__nav-item {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    gap: 25px 150px;
 }
 
 .footer__contacts {
@@ -1077,7 +1139,7 @@ input {
     color: #FFFFFF;
 }
 
-.contacts__item_icon {
+.contacts__item-icon {
     margin: 0;
 
     border: 1px solid #666666;
@@ -1086,7 +1148,7 @@ input {
     cursor: pointer;
 }
 
-.contacts__item_icon:hover {
+.contacts__item-icon:hover {
     border-color: #9D8665;
 }
 
@@ -1777,8 +1839,29 @@ input {
 
 /* --------- Media Queries ---------*/
 
+@media (max-width: 1530px) {
 
-@media (max-width: 1024px) {
+    /* --------- Explore ---------*/
+/* 
+    .picture-slider {
+        width: calc(100vw - 810px);
+        height: calc(97vw - 810px);
+    } */
+}
+
+@media (max-width: 1350px) {
+
+    .tickets__content {
+        justify-content: space-around;
+    }
+
+    .ticket-type {
+        display: none;
+    }
+}
+
+/* ex 1024px */
+@media (max-width: 1300px) {
 
     /* --------- Header ---------*/
 
@@ -1837,6 +1920,9 @@ input {
 
     
     /* --------- Main Sections ---------*/
+    .section {
+        padding: 60px 0;
+    }
 
     .section__title {
         margin-bottom: 20px;
@@ -1846,7 +1932,7 @@ input {
     }
 
     .section__subtitle {
-        margin-bottom: 0;
+        margin-bottom: 25px;
     }
         
     .section__strip {
@@ -1858,7 +1944,10 @@ input {
         font-size: 20px;
     }
     
-    
+    .text-hidden-1024 {
+        display: none;
+    }
+
     /* --------- Tour ---------*/
 
     .tour {
@@ -1891,18 +1980,198 @@ input {
         line-height: 19px;
     }
 
+
+    /* --------- Explore ---------*/
+
+    .explore__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .explore__content {
+        max-width: none;
+        margin: 0;
+    }
+
+    .explore__slider {
+        margin-top: 60px;
+    }
+
+    /* --------- Video ---------*/
+
+    .video__content {
+        display: none;
+    }
+
+    .video__player {
+        margin-top: 40px;
+    }
+
+    /* --------- Gallery ---------*/
+
+    .gallery-pictures {
+        height: 1265px;
+        margin-top: 60px;
+    }
+
+    /* --------- Tickets ---------*/
+
+    .tickets__img {
+        width: calc(100vw - 324px);
+        height: calc(63vw - 205px);
+    }
+
+    .ticket-type {
+        display: none;
+    }
+
+    .amount {
+        justify-content: space-between;
+    }
+
+    .amount__inner {
+        /* width: 100%;
+        max-width: 175px;
+        margin-left: 80px; */
+
+        align-items: stretch;
+    }
+
+    .amount__tickets {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 70px;
+
+        /* display: flex;
+        height: 100%;
+        justify-content: space-between; */
+    }
+
+    .amount__tickets-age {
+        margin-bottom: 10px;
+    }
+
+    .amount__calc {
+        width: 100%;   
+        margin-bottom: 25px;
+    }
+
+    .amount__total {
+        margin-top: 25px;
+    }
+    
     /* --------- Contacts ---------*/
 
+    .contacts__item {
+        margin-bottom: 15px;
+    }
+
     .contacts__subtitle {
+        margin-bottom: 35px;
+
         font-size: 24px;
         line-height: 28px;
     }
 
+    .contacts__link {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .contacts__map {
+        width: calc(100vw - 330px);
+        height: calc(65vw - 212px);
+    }
+
     /* --------- Footer ---------*/
-    /* ---------  ---------*/
+
     /* ---------  ---------*/
 }
 
+@media (max-width: 1150px) { 
+
+    .footer__content {
+        height: 243px;
+        padding-top: 62px;
+    }
+
+    .logo {
+        margin-right: 45px;
+    }
+
+    .footer__inner-navigation {
+        max-width: 545px;
+    }
+
+    .footer__nav {
+        width: 313px;
+        height: 128px;
+
+        gap: 23px 100px;
+    }
+
+    .footer__nav-item {
+        margin-bottom: 0;
+    }
+
+    .footer__contacts {
+        margin-bottom: 0;
+    }
+
+    .footer__content {
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 970px) { 
+
+    /* --------- Footer ---------*/
+
+    .footer__inner {
+        flex-direction: column;
+    }
+
+    .footer__content {
+        height: 308px;
+        padding: 40px 0;
+    }
+
+    .logo {
+        width: 199px;
+        margin-right: 80px;
+    }
+
+    .footer__inner-navigation {
+        max-width: none;
+    }
+
+    .footer__nav {
+        width: 393px;
+        height: 121px;
+        margin-top: 17px;
+        padding: 0 19px;
+
+        gap: 20px 184px;
+    }
+
+    .footer__contacts {
+        margin: 40px 0;
+        margin-left: 220px;
+
+        align-self: center;
+    }
+
+    .nav__link {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .footer__info {
+        height: 102px;
+    }
+
+}
 
 
 /* @media (max-width: 768px) { */
@@ -1921,10 +2190,10 @@ input {
 
     /* --------- Navigation ---------*/
 
-    .nav__link {
+    /* .nav__link {
         font-size: 18px;
         line-height: 21px;
-    }
+    } */
 
     /* --------- Welcome ---------*/
 
@@ -1941,21 +2210,22 @@ input {
         justify-content: space-between;
         flex-direction: column;
         align-items: center
-
     }
 
     .welcome__poster {
         width: 100%;
         height: 100%;
-        max-width: 726px;
+        max-width: 728px;
         max-height: 546px;
+
+        /* width: calc(100vw - 40px);
+        height: calc(65vh - 40px); */
 
         position: static;
         background: url(../assets/img/welcome-slider/1.jpg);
-        background-size: cover;
+        /* background-size: cover; */
     }
     
-
     .welcome__content {
         height: auto;
         padding: 0;
@@ -1991,9 +2261,12 @@ input {
         padding: 0;
     }
 
-
     
     /* --------- Main Sections ---------*/
+
+    .section {
+        padding: 40px 0;
+    }
 
     .section__title {
         font-size: 40px;
@@ -2006,6 +2279,10 @@ input {
         
     .section__strip {
         margin-bottom: 40px;
+    }
+
+    .text-hidden-870 {
+        display: none;
     }
 
     /* --------- Tour ---------*/
@@ -2030,7 +2307,57 @@ input {
         line-height: 21px;
     }
 
+    /* --------- Explore ---------*/
+
+    .explore__text-content {
+        display: none;
+    }
+
+    .explore__slider {
+        margin-top: 40px;
+    }
+
+
+    /* --------- Explore ---------*/ 
+
+
+    /* --------- Video ---------*/
+
+    
+    /* --------- Gallery ---------*/
+
+    .gallery-pictures {
+        height: 1080px;
+        margin-top: 40px;
+    }
+
+    .gallery-pictures__inner {
+        column-count: 2;
+        column-gap: 24px;
+    }
+
+    /* --------- Tickets ---------*/
+
+    .tickets__img {
+        width: calc(100vw - 324px);
+        height: calc(65vw - 159px);
+    }
+
+    .amount__total {
+        margin-top: 40px;
+    }
+
+    .amount__tickets {
+        margin-bottom: 40px;
+    }
+
     /* --------- Contacts ---------*/
+
+    .contacts__inner {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+    }
 
     .contacts__subtitle {
         font-size: 20px;
@@ -2042,13 +2369,118 @@ input {
         line-height: 21px;
     }
 
+    .contacts__map {
+        margin-top: 25px; 
+    }
+
+    .contacts__map {
+        width: 100%;
+        /* max-width: 728px; */
+        height: 100%;
+        /* max-height: 476px; */
+    }
+
     /* --------- Footer ---------*/
 
 
-    /* ---------  ---------*/
+
     /* ---------  ---------*/
 }
 
+@media (max-width: 768px) {
+
+    /* --------- Explore ---------*/ 
+
+    .explore__inner {
+        display: block;
+    }
+
+    .picture-slider__slider {
+        left: 426px;
+    }
+
+    .picture-slider {
+        height: calc(97vw - 52px);
+    }
+
+    .picture-slider__img-after {
+        width: calc(100vw - 56px);
+        height: calc(97vw - 52px);
+    }
+    
+    .picture-slider__img-before {
+        width: calc(100vw - 56px);
+        height: calc(97vw - 52px);
+    }
+
+    .picture-slider__slider {
+        /* width: calc(100vw - 720px); */
+        height: calc(97vw - 52px);
+    }
+
+@media (max-width: 695px) { 
+
+    /* --------- Footer ---------*/
+
+    .footer__content {
+        height: 296px;
+        padding: 40px 0;
+    }
+    
+    .logo__link {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .logo__icon {
+        width: 29px;
+        height: 16px;
+        margin-right: 20px;
+
+        background-size: 100%;
+    }
+
+    .footer__inner-navigation {
+        flex-direction: column;
+    }
+
+    .footer__nav {
+        width: 100%;
+        max-width: none;
+        height: 90px;
+        margin-top: 0;
+        padding: 0;
+
+        gap: 30px 95px;
+    }
+
+    .footer__contacts {
+        width: 260px;
+        margin: 33px 0 0 0;
+    }
+
+    .nav__link {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .footer__info,
+    .footer__github {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 578px) {
+
+    /* .explore__slider {
+        left: 59%;
+    }
+
+    .picture-slider__img-before {
+        width: calc(59% + 20px);
+    } */
+}
 
 @media (max-width: 480px) {
 
@@ -2070,10 +2502,10 @@ input {
 
     /* --------- Navigation ---------*/
 
-    .nav__link {
+    /* .nav__link {
         font-size: 16px;
         line-height: 19px;
-    }
+    } */
 
     /* --------- Welcome ---------*/
 
@@ -2082,8 +2514,8 @@ input {
     }    
     
     .welcome__poster {
-        width: 380px;
-        height: 285px; 
+        max-width: 380px;
+        max-height:  285px;
     }
 
     .welcome__title {
@@ -2144,7 +2576,6 @@ input {
     }
 
     /* --------- Tour ---------*/
-
     
     .tour {
         gap: 40px 50px;
@@ -2164,6 +2595,23 @@ input {
         line-height: 19px;
     }
 
+    /* --------- Gallery ---------*/
+
+    .gallery-pictures {
+        height: 640px;
+    }
+
+    /* --------- Tickets ---------*/
+
+    .tickets__img {
+        width: calc(100vw - 40px);
+        height: calc(42vw - 16px);
+    }
+
+    .tickets__content {
+        flex-direction: column;
+    }
+
     /* --------- Contacts ---------*/
 
     .contacts__subtitle,
@@ -2172,6 +2620,11 @@ input {
         line-height: 19px;
     }
 
+    /* .contacts__map {
+        max-width: 380px;
+        max-height: 248px;
+    } */
+
     /* --------- Footer ---------*/
 
     .footer__info {
@@ -2179,6 +2632,43 @@ input {
         line-height: 22px;
     }
 
+    .footer__nav {
+        width: 100%;
+        max-width: none;
+        height: 68px;
+        margin-top: 40px;
+        padding: 0;
+        /* max-width: 380px; */
+
+        gap: 30px 75px;
+    }
+
+    .footer__contacts {
+        width: 260px;
+        margin: 40px 0;
+    }
+
+    .footer__school {
+        display: none;
+    }
+
     /* ---------  ---------*/
     /* ---------  ---------*/
 }
+
+
+@media (max-width: 415px) {
+
+    .footer__content {
+        height: 100%;
+    }
+
+    .footer__nav {
+        display: none;
+    }
+
+    .footer__contacts {
+        margin: 40px 0 0 0;
+    }
+
+ }
