@@ -151,6 +151,54 @@ input {
     color: #9D8665;
 }
 
+/* --------- Burger Menu ---------*/
+
+.burger {
+    width: 32px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    display: none;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
+}
+
+.burger__line {
+    display: block;
+    width: 32px;
+    height: 2px;
+    margin-bottom: 6px;
+
+    background: #FFFFFF;
+}
+
+.burger.active.burger__line:nth-child(2) {
+    display: none;
+}
+
+.burger.active.burger__line:nth-child(1) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
+
+.burger.active.burger__line:nth-child(3) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
 
 /* --------- Welcome ---------*/
 
@@ -1201,7 +1249,7 @@ input {
     background: url(../assets/svg/contacts/icon-pinterest-gold.svg);
 }
 
-.footer__github {
+.footer__link {
     font-family: Roboto;
     font-style: normal;
     font-weight: 200;
@@ -1214,7 +1262,7 @@ input {
     transition: 0.3s;
 }
 
-.footer__github:hover {
+.footer__link:hover {
     color: #9D8665;
 }
 
@@ -2108,6 +2156,20 @@ input {
     }
 }
 
+@media (max-width: 1200px) { 
+
+    /* --------- Burger Menu ---------*/
+
+    .burger {
+        display: block;
+    }
+    
+    .header__nav {
+        display: none;
+    }
+}
+
+
 @media (max-width: 1150px) { 
 
     .footer__content {
@@ -2500,19 +2562,6 @@ input {
         padding: 40px 0;
     }
     
-    .logo__link {
-        font-size: 16px;
-        line-height: 18px;
-    }
-
-    .logo__icon {
-        width: 29px;
-        height: 16px;
-        margin-right: 20px;
-
-        background-size: 100%;
-    }
-
     .footer__inner-navigation {
         flex-direction: column;
     }
@@ -2571,6 +2620,20 @@ input {
     .logo {
         font-size: 16px;
         line-height: 18px;
+        margin-right: 0;
+    }
+
+    .logo__link {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .logo__icon {
+        width: 29px;
+        height: 16px;
+        margin-right: 20px;
+
+        background-size: 100%;
     }
 
     /* --------- Navigation ---------*/
@@ -2737,8 +2800,8 @@ input {
         padding: 80px 30px 50px;
     }
 
-    .form__inner {
-    }
+    /* .form__inner {
+    } */
 
     .form__booking {
         width: 360px;
