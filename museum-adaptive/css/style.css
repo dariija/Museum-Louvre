@@ -1022,6 +1022,7 @@ input {
 
     background-image: url(../assets/img/parallax.jpg);
     background-size: cover;
+    background-position-x: 50%;
     background-attachment: fixed;
 }
 
@@ -1253,13 +1254,23 @@ input {
 }
 
 .modal__content {
-    width: 970px;
-    height: 663px;
-    margin: 0 auto;
-    padding: 91px 0;
+    width: 100%;
+    /* width: 970px; */
+    /* height: 663px; */
+    /* margin: 0 auto; */
+    padding: 91px 235px;
 }
 
-.form__left-col {
+.form__inner {
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__booking {
     width: 400px;
 
     display: flex;
@@ -1520,7 +1531,7 @@ input {
     color: #030303;
 }
 
-.form__right-col {
+.form__payment {
     width: 530px;
     padding: 25px 30px;
 
@@ -2085,7 +2096,16 @@ input {
 
     /* --------- Footer ---------*/
 
-    /* ---------  ---------*/
+    /* --------- Modal ---------*/
+
+    .modal__inner {
+        width: 1030px;
+        height: 768px;
+    }
+
+    .modal__content {
+        padding: 75px 30px;
+    }
 }
 
 @media (max-width: 1150px) { 
@@ -2170,7 +2190,6 @@ input {
     .footer__info {
         height: 102px;
     }
-
 }
 
 
@@ -2383,7 +2402,6 @@ input {
     /* --------- Footer ---------*/
 
 
-
     /* ---------  ---------*/
 }
 
@@ -2417,6 +2435,61 @@ input {
         /* width: calc(100vw - 720px); */
         height: calc(97vw - 52px);
     }
+
+
+    /* --------- Parallax ---------*/
+
+    .parallax {
+        height: 300px;
+    }
+
+
+    /* --------- Modal ---------*/
+
+    .body {
+        overflow: hidden;
+    }
+
+    .modal {
+        align-items: normal;
+
+        overflow: scroll;
+    }
+
+    .modal__inner {
+        width: 590px;
+        height: 1480px;
+    }
+
+    .modal__content {
+        padding: 80px 30px 40px;
+    }
+
+    .form__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form__booking {
+        width: 530px;
+        height: 644px;
+    }
+
+    .form__header {
+        margin-bottom: 40px;
+    }
+
+    .form__input_date,
+    .form__input_time {
+        width: 251px;
+    }
+
+    .form__payment {
+        width: 530px;
+        height: 665px;
+        padding: 25px 15px;
+    }
+}    
 
 @media (max-width: 695px) { 
 
@@ -2652,6 +2725,79 @@ input {
         display: none;
     }
 
+
+    /* --------- Modal ---------*/
+
+    .modal__inner {
+        width: 420px;
+        height: 1755px;
+    }
+
+    .modal__content {
+        padding: 80px 30px 50px;
+    }
+
+    .form__inner {
+    }
+
+    .form__booking {
+        width: 360px;
+        height: 690px;
+    }
+
+    .form__header {
+        margin-bottom: 40px;
+    }
+
+    .form__title {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    .form__group {
+        display: block;
+    }
+
+    .form__input_date,
+    .form__input_time {
+        width: 100%;
+    }
+
+    .form__payment {
+        width: 360px;
+        height: 885px;
+    }
+
+    .card {
+        height: 100%;
+        margin-bottom: 40px;
+
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card__frontside,
+    .card__backside {
+        width: 330px;
+        height: 209px;
+
+        position: static;
+    }
+
+    .card__backside {
+        margin-top: 25px;
+    }
+
+    .card__backside-content {
+        margin-left: 235px;
+    }
+
+    .form__button {
+        margin: 0;
+        align-self: flex-end;
+    }
+
     /* ---------  ---------*/
     /* ---------  ---------*/
 }
@@ -2670,5 +2816,4 @@ input {
     .footer__contacts {
         margin: 40px 0 0 0;
     }
-
  }
