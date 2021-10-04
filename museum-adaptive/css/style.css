@@ -85,6 +85,20 @@ input {
     pointer-events: none;
 }
 
+.overlay {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: none;
+    z-index: 10;
+}
+
 
 
 /* --------- Header ---------*/
@@ -136,6 +150,8 @@ input {
 
 .header__nav {
     width: 775px;
+
+    z-index: 15;
 }
 
 .nav__list {
@@ -289,6 +305,7 @@ input {
 
     background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/1.jpg) no-repeat;
     background-size: cover;
+    background-position: 50% 50%;
 }
 
 
@@ -659,9 +676,10 @@ input {
     overflow: hidden;
 }
 
-    /* .picture-slider__img-overlay {
-        width: 100%;
-    } */
+/* .picture-slider__img-overlay {
+    width: 500px;
+    max-width: 100%;
+} */
 
 .picture-slider__img-after {
     width: 720px;
@@ -685,11 +703,13 @@ input {
 
     position: absolute;
     top: 0;
-    left: 426px;
+    left: 58%;
 
     background: url(../assets/svg/explore-slider/explore-slider.svg) no-repeat;
-    background-size: 100%;
-    background-position-y: calc(50% + 12px);
+    /* background-size: 100%; */
+    /* background-position-y: calc(50% + 20px); */
+    background-size: contain;
+
     z-index: 2;
 
     cursor: pointer;
@@ -698,7 +718,7 @@ input {
 
 .picture-slider__slider:hover {
     background: url(../assets/svg/explore-slider/explore-slider-hover.svg) no-repeat;
-    background-size: 100%
+    background-size: contain;
 }
 
 /* --------- Video---------*/
@@ -990,6 +1010,7 @@ input {
     height: 550px;
     background: url(../assets/img/buy-tickets_img.jpg) no-repeat;
     background-size: 100%;
+    background-position: 50% 50%;
 }
 
 .tickets__content {
@@ -2294,6 +2315,10 @@ input {
 }
 
 @media (max-width: 1200px) { 
+    
+    .overlay_active {
+        display: block;
+    }
 
     /* --------- Burger Menu ---------*/
 
@@ -2314,7 +2339,7 @@ input {
         left: -1000%;
 
         background: linear-gradient(90deg, #030303 70%, rgba(0, 0, 0, 0.5) 86%,rgba(0, 0, 0, 0) 100%);
-        z-index: 10;
+        z-index: 15;
 
         transition: 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
     }
@@ -2545,6 +2570,9 @@ input {
         display: block;
     } */
 
+    .overlay_active {
+        display: block;
+    }
 
     /* --------- Header Navigation ---------*/
 
@@ -2556,6 +2584,7 @@ input {
         background: #030303;
 
         overflow: auto;
+        z-index: 15;
     }
 
     .nav-header__images,
@@ -2610,7 +2639,9 @@ input {
 
         position: static;
         background: url(../assets/img/welcome-slider/1.jpg) no-repeat;
-        /* background-size: cover; */
+        background-size: cover;
+        background-position: 50% 50%;
+
     }
     
     .welcome__content {
@@ -2733,6 +2764,10 @@ input {
         column-gap: 24px;
     }
 
+    .gallery-pictures__image:nth-child(11) {
+        padding-top: 0;
+    }
+
     /* --------- Tickets ---------*/
 
     .tickets__img {
@@ -2807,11 +2842,8 @@ input {
         display: block;
     }
 
-    .picture-slider__slider {
-        left: 422px;
-    }
-
     .picture-slider {
+        width: calc(100vw - 40px);
         height: calc(97vw - 40px);
     }
 
@@ -2825,10 +2857,6 @@ input {
         height: calc(97vw - 40px);
     }
 
-    .picture-slider__slider {
-        /* width: calc(99vw - 720px); */
-        /* height: calc(97vw - 52px); */
-    }
 
     /* --------- Video ---------*/
 /* 
@@ -2983,14 +3011,6 @@ input {
 }
 
 @media (max-width: 578px) {
-
-    /* .explore__slider {
-        left: 59%;
-    }
-
-    .picture-slider__img-before {
-        width: calc(59% + 20px);
-    } */
 }
 
 @media (max-width: 480px) {
