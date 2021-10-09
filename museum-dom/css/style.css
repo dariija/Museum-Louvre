@@ -294,7 +294,7 @@ input {
     position: relative;
 }
 
-.welcome__poster {
+/* .welcome__poster {
     width: 1000px;
     height: 750px;
 
@@ -306,7 +306,7 @@ input {
     background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/1.jpg) no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-}
+} */
 
 
 .welcome__content {
@@ -370,7 +370,7 @@ input {
     background: #9D8665;
 }
 
-.welcome__slider {
+/* .welcome__slider {
 
     position: absolute;
     bottom: 0;
@@ -378,15 +378,112 @@ input {
 
     background: #030303;
     z-index: 5;
-}
+} */
 
 /* --------- Welcome Slider  ---------*/
 
-.slider {
+/* .welcome__poster {
+    width: 1000px;
+    height: 750px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/1.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+} */
+
+.welcome__welcome-slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+}
+
+.welcome-slider {
+    height: 100%;
+}
+
+.welcome-slider__inner {
+    width: 1000px;
+    height: 750px;
+
+    position: relative;
+
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+    overflow: hidden;
+}
+
+/* .welcome-slider__slides {
+    width: 5000px;
+
+    display: flex;
+} */
+
+.welcome-slider__slide {
+    width: 1000px;
+    height: 750px;
+
+    display: none;
+
+    animation: 0.5s ease-in-out;
+}
+
+.active,
+.next {
+    display: block;
+}
+
+.next {
+    /* width: 100%; */
+
+    position: absolute;
+    top: 0;
+}
+
+.welcome-slider__slide:nth-child(1) {
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/1.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.welcome-slider__slide:nth-child(2) {
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/2.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.welcome-slider__slide:nth-child(3) {
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/3.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.welcome-slider__slide:nth-child(4) {
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/4.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.welcome-slider__slide:nth-child(5) {
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/img/welcome-slider/5.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.welcome-slider__pagination {
     width: 600px;
     height: 120px;
-
     padding: 0 75px;
+
+    position: absolute;
+    /* top: calc(100% - 60px); */
+    right: 0;
+    bottom: 0;
 
     display: flex;
     flex-direction: row;
@@ -402,9 +499,12 @@ input {
     text-transform: uppercase;
     text-align: center;
     color: #FFFFFF;
+
+    background: #030303;
+    z-index: 5;
 }
 
-.slider__num {
+.welcome-slider__num {
     width: 76px;
     height: 40px;
 
@@ -412,55 +512,54 @@ input {
     justify-content: space-between;
 }
 
-.slider__num-now,
-.slider__num-all {
+.welcome-slider__num-now,
+.welcome-slider__num-all {
     width: 25px;
     height: 40px;
 }
 
-
-.slider__pagination {
+.welcome-slider__bullets {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 0 25px;
 }
 
-.slider__pagination-item {
+.bullet {
     width: 16px;
     height: 16px;
 
     cursor: pointer;
 }
 
-.slider__pagination-item {
+.bullet {
     background: url(../assets/svg/welcome-slider/slide-pagination.svg) no-repeat;
     background-size: 100%;
 
     transition: 0.3s;
 }
 
-.slider__pagination-item_active {
+.bullet_active {
     background: url(../assets/svg/welcome-slider/active-slide-pagination.svg) no-repeat;
     background-size: 100%;
 
 }
 
-.slider__pagination-item:hover{
+.bullet:hover{
     background: url(../assets/svg/welcome-slider/slide-pagination-hover.svg) no-repeat;
     background-size: 100%;
 
 }
 
-.slider__controls {
+.welcome-slider__controls {
     width: 80px;
 
     display: flex;
     justify-content: space-between;
 }
 
-.slider__button-left,
-.slider__button-right {
+.welcome-slider__button-left,
+.welcome-slider__button-right {
     width: 30px;
     height: 8px;
     padding: 0;
@@ -472,30 +571,70 @@ input {
     transition: 0.3s;
 }
 
-.slider__button-left {
+.welcome-slider__button-left {
     background: url(../assets/svg/welcome-slider/left.svg) no-repeat;
     background-size: 100%;
 
 }
 
-.slider__button-left:hover {
+.welcome-slider__button-left:hover {
     background: url(../assets/svg/welcome-slider/left-hover.svg) no-repeat;
     background-size: 100%;
 
 }
 
-.slider__button-right {
+.welcome-slider__button-right {
     background: url(../assets/svg/welcome-slider/right.svg) no-repeat;
     background-size: 100%;
 
 }
 
-.slider__button-right:hover {
+.welcome-slider__button-right:hover {
     background: url(../assets/svg/welcome-slider/right-hover.svg) no-repeat;
     background-size: 100%;
 
 }
 
+/* --------- Welcome Slider Animation ---------*/
+
+.to-left {
+    animation-name: left;
+}
+
+.to-right {
+    animation-name: right;
+    animation-direction: reverse; 
+}
+
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right {
+    animation-name: right;
+}
+
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
 
 /* --------- Main Sections ---------*/
 
@@ -666,6 +805,8 @@ input {
     height: 700px;
 
     position: relative;
+
+    overflow: hidden;
 }
 
 .picture-slider__img-comp {
@@ -972,6 +1113,15 @@ input {
 .gallery-pictures__image {
     max-width: 454px;
     margin-bottom: 24px;
+
+    opacity: 0;
+    transform: translate(0px, 50px) scale(0.95);
+    transition: 1s ease-in-out;
+}
+
+.show-picture {
+    opacity: 1;
+    transform: translate(0px, 0px)  scale(1);
 }
 
 .gallery-pictures__image:nth-child(1) {
@@ -1234,8 +1384,9 @@ input {
 .contacts__map {
     width: 100%;
     max-width: 960px;
-    height: auto;
-    max-height: 620px;
+    /* height: auto; */
+    /* max-height: 620px; */
+    height: 620px;
 }
 
 
@@ -2075,7 +2226,12 @@ input {
         height: 585px;
     }    
 
-    .welcome__poster {
+    .welcome-slider__slide  {
+        width: 700px;
+        height: 525px; 
+    }
+
+    .welcome-slider__inner {
         width: 700px;
         height: 525px; 
     }
@@ -2107,14 +2263,14 @@ input {
         line-height: 23px;
     }
 
-    .slider {
+    .welcome-slider__pagination {
         width: 700px;
 
         font-size: 20px;
         padding-left: 225px;
     }
 
-    .slider__pagination-item {
+    .bullet  {
         width: 12px;
         height: 12px;
     }
@@ -2628,22 +2784,37 @@ input {
         align-items: center
     }
 
-    .welcome__poster {
+    /* .welcome__poster {
         width: 100%;
         height: 100%;
         max-width: 728px;
         max-height: 546px;
 
-        /* width: calc(100vw - 40px);
-        height: calc(65vh - 40px); */
-
         position: static;
         background: url(../assets/img/welcome-slider/1.jpg) no-repeat;
         background-size: cover;
         background-position: 50% 50%;
+    } */
 
+    .welcome-slider {
+        display: flex;
+        flex-direction: column;
     }
-    
+
+    .welcome-slider__inner {
+        width: calc(100vw - 40px);
+        height: calc(75vw - 32px)
+    }
+
+    .welcome-slider__slide {
+        width: calc(100vw - 40px);
+        height: calc(75vw - 32px)
+    }
+
+    .welcome__welcome-slider {
+        position: static;
+    }
+
     .welcome__content {
         height: auto;
         padding: 0;
@@ -2665,14 +2836,14 @@ input {
         display: none;
     }
 
-    .welcome__slider {
+    .welcome-slider__pagination {
         margin: 30px 0;
 
         position: static;
         align-self: center;
     }    
 
-    .slider {
+    .welcome-slider__pagination {
         width: 100%;
         max-width: 400px;
         height: 40px;
@@ -2811,16 +2982,19 @@ input {
     }
 
     .contacts__map {
+        width: 100%;
+        max-width: 728px;
+        height: calc(65vw - 23px);
+        /* height: 100%; */
+        /* max-height: 476px; */
+
         margin-top: 25px; 
         margin-bottom: 30px;
+
+        align-self: center;
     }
 
-    .contacts__map {
-        width: 100%;
-        /* max-width: 728px; */
-        height: 100%;
-        /* max-height: 476px; */
-    }
+    
 
     /* --------- Footer ---------*/
 
@@ -3071,7 +3245,17 @@ input {
         height: 544px;
     }    
     
-    .welcome__poster {
+    /* .welcome__poster {
+        max-width: 380px;
+        max-height:  285px;
+    } */
+
+    .welcome-slider__slide  {
+        max-width: 380px;
+        max-height:  285px;
+    }
+
+    .welcome-slider__inner {
         max-width: 380px;
         max-height:  285px;
     }
@@ -3090,33 +3274,33 @@ input {
         margin: 20px 0;
     }
 
-    .slider {
+    .welcome-slider__pagination {
         gap: 0 25px;
 
         max-width: 230px;
         font-size: 16px;
     }
 
-    .slider__num {
+    .welcome-slider__num {
         width: 50px;
         height: 40px;
     }
 
-    .slider__pagination {
+    .welcome-slider__bullets {
         gap: 0 10px;
     }
 
-    .slider__pagination-item {
+    .bullet {
         width: 7px;
         height: 7px;
     }
 
-    .slider__controls {
+    .welcome-slider__controls {
         width: 55px;
     }
 
-    .slider__button-left,
-    .slider__button-right {
+    .welcome-slider__button-left,
+    .welcome-slider__button-right {
         width: 20px;
     }
     
