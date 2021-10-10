@@ -324,20 +324,20 @@
 
                                     <div class="amount__tickets">
                                         <label class="amount__tickets-age" for="basic">Basic 18+</label>
-                                        <div class="amount__calc">
-                                            <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
-                                            <input class="amount__value" type="number" min="0" max="20" value="1"  id="basic" readonly >
-                                            <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                        <div class="amount__calc-basic">
+                                            <button class="amount__button-left" type="button">&minus;</button>
+                                            <input class="amount__value-basic" type="number" min="0" max="20" value="1"  id="basic" name="basic" readonly >
+                                            <button class="amount__button-right" type="button">&plus;</button>
                                         </div>
     
                                         <label class="amount__tickets-age" for="senior">Senior 65+</label>
-                                        <div class="amount__calc">
-                                            <button class="amount__button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
-                                            <input class="amount__value" type="number" min="0" max="20" value="1" id="senior" readonly >
-                                            <button class="amount__button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                        <div class="amount__calc-senior">
+                                            <button class="amount__button-left" type="button">&minus;</button>
+                                            <input class="amount__value-senior" type="number" min="0" max="20" value="1" id="senior" name="senior" readonly >
+                                            <button class="amount__button-right" type="button">&plus;</button>
                                         </div>
     
-                                        <div class="amount__total">Total &#8364;</div>
+                                        <div class="amount__total">Total &#8364;<span class="amount__total-value" name="total">60</span></div>
                                     </div>
                                 </div>
 
@@ -611,6 +611,7 @@
     <script src="js/burger-menu.js"></script>
     <script src="js/welcome-slider.js"></script>
     <script src="js/mapbox.js"></script>
+    <script src="js/calculator-tickets.js"></script>
 
 </body>
 </html>

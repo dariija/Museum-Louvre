@@ -1245,14 +1245,15 @@ input {
     letter-spacing: 1.65px;
 }
 
-.amount__total::after{
-    content: "220";
-    display: inline-block;
+.amount__total-value{
+    /* content: "220";
+    display: inline-block; */
 
     margin-left: -2px;
 }
 
-.amount__calc {
+.amount__calc-basic,
+.amount__calc-senior {
     width: 150px;
     height: 50px;
     margin-bottom: 10px;
@@ -1263,7 +1264,8 @@ input {
     border: 3px solid #000000; 
 }
 
-.amount__button {
+.amount__button-left,
+.amount__button-right {
     width: 50px;
     height: 100%;
     padding: 0;
@@ -1277,11 +1279,13 @@ input {
     transition: 0.3s;
 }
 
-.amount__button:hover {
+.amount__button-left:hover ,
+.amount__button-right:hover {
     color: #9D8665;
 }
 
-.amount__value {
+.amount__value-basic,
+.amount__value-senior {
     width: 50px;
     padding-left: 12px;
 
@@ -2421,7 +2425,8 @@ input {
         margin-bottom: 10px;
     }
 
-    .amount__calc {
+    .amount__calc-basic,
+    .amount__calc-senior {
         width: 100%;   
         margin-bottom: 25px;
     }
@@ -2430,7 +2435,7 @@ input {
         margin-top: 26px;
     }
     
-    .amount__total::after {
+    .amount__total-value {
         margin-left: 15px;
     }
     /* --------- Contacts ---------*/
@@ -3520,7 +3525,7 @@ input {
         text-align: center;
     }
 
-    .amount__total::after {
+    .amount__total-value {
         margin-left: 2px;
     }
 
