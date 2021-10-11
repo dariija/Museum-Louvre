@@ -1,4 +1,4 @@
-const video = document.querySelector('.video__video'),
+const mainVideo = document.querySelector('.video__video'),
       videoContainer = document.querySelector('.video__player'),
       bigPlayButton = document.querySelector('.video__play-button'),
       smallPlayButton = document.querySelector('.player-controls__play-button-small'),
@@ -6,8 +6,8 @@ const video = document.querySelector('.video__video'),
       fullscreenButton = document.querySelector('.player-controls__fullscreen-button'),
       videoProgressBar = document.querySelector('.player-controls__progress-bar'),
       videoSoundBar = document.querySelector('.player-controls__volume'),
-      controlVideoPanel = document.querySelector('.player-controls'),
-      body = document.querySelector('body');
+      controlVideoPanel = document.querySelector('.player-controls');
+    //   body = document.querySelector('body');
 
 bigPlayButton.addEventListener('click', function() {
     togglePlayButtons();
@@ -19,7 +19,7 @@ smallPlayButton.addEventListener('click', function() {
     toggleVideo();
 });
 
-video.addEventListener('click', function(event) {
+mainVideo.addEventListener('click', function(event) {
     if (!event.target.classList.contains('video__play-button')) {
         togglePlayButtons();
         toggleVideo();
@@ -38,12 +38,12 @@ videoProgressBar.addEventListener('input', function() {
     changeVideoProgressBar();
 })
 
-video.addEventListener('timeupdate', function() {
-    videoProgressBar.value = (video.currentTime * 100)/video.duration;
+mainVideo.addEventListener('timeupdate', function() {
+    videoProgressBar.value = (mainVideo.currentTime * 100)/mainVideo.duration;
     if (videoProgressBar.value === 100) togglePlayButtons();
 });
 
-video.addEventListener('ended', function() {
+mainVideo.addEventListener('ended', function() {
     togglePlayButtons();
 })
 
@@ -80,15 +80,15 @@ function togglePlayButtons() {
 };
 
 function toggleVideo() {
-    video.paused? video.play() : video.pause()
+    mainVideo.paused? mainVideo.play() : mainVideo.pause()
 };
 
 function toggleSoundVideo() {
-    if ( video.volume > 0) {
-        video.volume = 0;
+    if ( mainVideo.volume > 0) {
+        mainVideo.volume = 0;
         videoSoundBar.value = 0;
     } else {
-        video.volume = 0.3;
+        mainVideo.volume = 0.3;
         videoSoundBar.value = 30;
     }
     soundButton.classList.toggle('player-controls__sound-button');
@@ -96,9 +96,9 @@ function toggleSoundVideo() {
 };
 
 function changeSoundVideo() {
-    video.volume = videoSoundBar.value/100;
+    mainVideo.volume = videoSoundBar.value/100;
 
-    if (video.volume === 0) {
+    if (mainVideo.volume === 0) {
         soundButton.classList.remove('player-controls__sound-button');
         soundButton.classList.add('player-controls__mute-button');    
     } else {
@@ -108,22 +108,22 @@ function changeSoundVideo() {
 };
 
 function changeVideoProgressBar() {
-    video.currentTime = (video.duration * videoProgressBar.value)/100;
+    mainVideo.currentTime = (mainVideo.duration * videoProgressBar.value)/100;
 };
 
 function speedUpVideo() {
-    video.playbackRate = Math.fround(video.playbackRate + 0.25);
-    console.log(video.playbackRate)
+    mainVideo.playbackRate = Math.fround(mainVideo.playbackRate + 0.25);
+    console.log(mainVideo.playbackRate)
 };
 
 function speedDownVideo() {
-    video.playbackRate = Math.fround(video.playbackRate - 0.25);
-    console.log(video.playbackRate)
+    mainVideo.playbackRate = Math.fround(mainVideo.playbackRate - 0.25);
+    console.log(mainVideo.playbackRate)
 };
 
 function toggleFullscreenVideo() {
-    video.classList.toggle('video-fullscreen');
-    video.classList.toggle('video__video');
+    mainVideo.classList.toggle('video-fullscreen');
+    mainVideo.classList.toggle('video__video');
     videoContainer.classList.toggle('video__player-fullscreen');
     videoContainer.classList.toggle('video__player');
     body.classList.toggle('no-scroll');    

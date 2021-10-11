@@ -256,9 +256,22 @@
                     </div>
 
                     <div class="video__playlist">
-                        <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/zp1BXPX8jcU?start=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
-                        <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/Vi5D6FKhRmo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
-                        <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/NOhDysLnTvY?start=10" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                        <div class="video__playlist-wrapper">
+                            <div class="video__playlist-slides slide">
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/zp1BXPX8jcU?start=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/Vi5D6FKhRmo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/NOhDysLnTvY?start=10" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/aWmJ5DgyWPI?start=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/2OR0OCr6uRE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+
+                                <!-- Clone Videos -->
+                                <!-- <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/zp1BXPX8jcU?start=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/Vi5D6FKhRmo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/NOhDysLnTvY?start=10" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/aWmJ5DgyWPI?start=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                                <iframe class="video__item" src="https://www.youtube-nocookie.com/embed/2OR0OCr6uRE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe> -->
+                            </div>
+                        </div>
                     </div>
 
                     <div class="video-slider">
@@ -299,22 +312,22 @@
                             <!-- <img class="tickets__img" src="assets/img/buy-tickets_img.jpg" alt="buy-tickets"> -->
                             <div class="tickets__img"></div>
 
-                            <div class="ticket-type">
+                            <div class="tickets__ticket-type ticket-type">
                                 <p class="section__subtitle">Ticket Type</p>
 
                                 <div class="ticket-type__item">
-                                    <input class="ticket-type__choice" type="radio" name="ticket-type" value="permanent" id="ticketPermanent" checked>
-                                    <label class="ticket-type__label" for="ticketPermanent">Permanent exhibition</label>
+                                    <input class="ticket-type__choice ticket-type-choice" type="radio" data-section="tickets" name="ticket-type" value="permanent" id="ticketPermanent" checked>
+                                    <label class="ticket-type__label" for="ticketPermanent" data-section="tickets">Permanent exhibition</label>
                                 </div>
 
                                 <div class="ticket-type__item">
-                                    <input class="ticket-type__choice" type="radio" name="ticket-type" value="temporary" id="ticketTermanent">
-                                    <label class="ticket-type__label" for="ticketTermanent">Temporary exhibition</label>
+                                    <input class="ticket-type__choice ticket-type-choice" type="radio" data-section="tickets" name="ticket-type" value="temporary" id="ticketTermanent">
+                                    <label class="ticket-type__label" for="ticketTermanent" data-section="tickets">Temporary exhibition</label>
                                 </div>
                                     
                                 <div class="ticket-type__item">
-                                    <input class="ticket-type__choice" type="radio" name="ticket-type" value="combined" id="ticketCombined">
-                                    <label class="ticket-type__label" for="ticketCombined">Combined Admission</label>
+                                    <input class="ticket-type__choice ticket-type-choice" type="radio" data-section="tickets" name="ticket-type" value="combined" id="ticketCombined">
+                                    <label class="ticket-type__label" for="ticketCombined" data-section="tickets">Combined Admission</label>
                                 </div>
                             </div>
 
@@ -324,20 +337,20 @@
 
                                     <div class="amount__tickets">
                                         <label class="amount__tickets-age" for="basic">Basic 18+</label>
-                                        <div class="amount__calc-basic">
-                                            <button class="amount__button-left" type="button">&minus;</button>
-                                            <input class="amount__value-basic" type="number" min="0" max="20" value="1"  id="basic" name="basic" readonly >
-                                            <button class="amount__button-right" type="button">&plus;</button>
+                                        <div class="amount__calc-basic basic-tickets">
+                                            <button class="amount__button-left button-left" type="button" data-section="tickets">&minus;</button>
+                                            <input class="amount__value-basic basic-tickets-value" type="number" data-section="tickets" min="0" max="20" value="1"  id="basic" name="tickets-basic-value" readonly >
+                                            <button class="amount__button-right button-right" type="button" data-section="tickets">&plus;</button>
                                         </div>
     
                                         <label class="amount__tickets-age" for="senior">Senior 65+</label>
-                                        <div class="amount__calc-senior">
-                                            <button class="amount__button-left" type="button">&minus;</button>
-                                            <input class="amount__value-senior" type="number" min="0" max="20" value="1" id="senior" name="senior" readonly >
-                                            <button class="amount__button-right" type="button">&plus;</button>
+                                        <div class="amount__calc-senior senior-tickets">
+                                            <button class="amount__button-left button-left" type="button" data-section="tickets">&minus;</button>
+                                            <input class="amount__value-senior senior-tickets-value" type="number" data-section="tickets" min="0" max="20" value="1" id="senior" name="tickets-senior-value" readonly >
+                                            <button class="amount__button-right button-right" type="button" data-section="tickets">&plus;</button>
                                         </div>
     
-                                        <div class="amount__total">Total &#8364;<span class="amount__total-value" name="total">60</span></div>
+                                        <div class="amount__total">Total &#8364;<span class="amount__total-value" name="total" data-cost-tickets="total">30</span></div>
                                     </div>
                                 </div>
 
@@ -497,11 +510,11 @@
                                 </div>
                                 
                                 <div class="form__select-wrapper">
-                                    <select class="form__input form__select-ticket" name="ticket-ttype" >
-                                        <option class="form__option-ticket" selected disabled>Ticket Type</option>
-                                        <option class="form__option-ticket" value="permanent">Permanent exhibition</option>
-                                        <option class="form__option-ticket" value="temporary">Temporary exhibition</option>
-                                        <option class="form__option-ticket" value="combined">Combined Admission</option>
+                                    <select class="form__input form__select-ticket ticket-type" name="ticket-ttype" >
+                                        <!-- <option class="form__option-ticket ticket-type-choice" selected disabled>Ticket Type</option> -->
+                                        <option class="form__option-ticket ticket-type-choice" value="permanent" data-section="form" selected>Permanent exhibition</option>
+                                        <option class="form__option-ticket ticket-type-choice" value="temporary" data-section="form">Temporary exhibition</option>
+                                        <option class="form__option-ticket ticket-type-choice" value="combined" data-section="form">Combined Admission</option>
                                     </select>
                                 </div>
 
@@ -511,10 +524,10 @@
                                         <div class="form__tickets-details">
                                             <div class="form__tickets-inner">
                                                 <label class="form__tickets-age" for="basic-form">Basic 18+ (20 €)</label>
-                                                <div class="form__tickets-value-choose">
-                                                    <button class="form__tickets-button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
-                                                    <input class="form__tickets-value" type="number" min="0" max="20" value="2"  id="basic-form" readonly >
-                                                    <button class="form__tickets-button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                                <div class="form__tickets-value-choose basic-tickets">
+                                                    <button class="form__tickets-button button-left" type="button" data-section="form">&minus;</button>
+                                                    <input class="form__tickets-value basic-tickets-value" type="number" data-section="form" min="0" max="20" value="1"  id="basic-form" name="form-basic-value" readonly >
+                                                    <button class="form__tickets-button button-right" type="button" data-section="form">&plus;</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -522,10 +535,10 @@
                                         <div class="form__tickets-details">
                                             <div class="form__tickets-inner">
                                                 <label class="form__tickets-age" for="senior-form">Senior 65+ (10 €)</label>
-                                                <div class="form__tickets-value-choose">
-                                                    <button class="form__tickets-button" type="button" onclick="this.nextElementSibling.stepDown()">&minus;</button>
-                                                    <input class="form__tickets-value" type="number" min="0" max="20" value="2" id="senior-form" readonly >
-                                                    <button class="form__tickets-button" type="button" onclick="this.previousElementSibling.stepUp()">&plus;</button>
+                                                <div class="form__tickets-value-choose senior-tickets">
+                                                    <button class="form__tickets-button button-left" type="button" data-section="form"">&minus;</button>
+                                                    <input class="form__tickets-value senior-tickets-value" type="number" data-section="form" min="0" max="20" value="1" id="senior-form" name="form-senior-value" readonly >
+                                                    <button class="form__tickets-button button-right" type="button" data-section="form">&plus;</button>
                                                 </div>
                                             </div>   
                                         </div>
@@ -558,7 +571,7 @@
 
                                     <div class="form__total-info">
                                         <p class="form__cost-total">Total:</p>
-                                        <p class="form__cost-total-price">60 €</p>
+                                        <p class="form__cost-total-price"><span data-cost-tickets="total">30</span> €</p>
                                     </div>
                                 </div>
                             </div>
@@ -615,13 +628,13 @@
     <script src="js/gallery.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/explore-slider.js"></script>
+     <script src="js/explore-slider.js"></script>
     <script src="js/burger-menu.js"></script>
     <script src="js/welcome-slider.js"></script>
     <script src="js/mapbox.js"></script>
     <script src="js/calculator-tickets.js"></script>
-    <script src="js/video-player.js"></script>
     <script src="js/validate-form.js"></script>
+    <script src="js/video-player.js"></script>
 
 </body>
 </html>

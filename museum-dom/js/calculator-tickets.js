@@ -95,14 +95,14 @@ function calcTotal() {
         costSenior;
 
     if (ticketType === 'permanent') {
-        costBasic = 40;
-        costSenior = 20;
-    } else if (ticketType === 'temporary') {
         costBasic = 20;
         costSenior = 10;
-    } else if (ticketType === 'combined') {
+    } else if (ticketType === 'temporary') {
         costBasic = 25;
         costSenior = 12.5;
+    } else if (ticketType === 'combined') {
+        costBasic = 40;
+        costSenior = 20;
     }
 
     let total = ticketValueBasic*costBasic  +  ticketValueSenior*costSenior;
