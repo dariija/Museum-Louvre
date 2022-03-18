@@ -7,7 +7,6 @@ const mainVideo = document.querySelector('.video__video'),
       videoProgressBar = document.querySelector('.player-controls__progress-bar'),
       videoSoundBar = document.querySelector('.player-controls__volume'),
       controlVideoPanel = document.querySelector('.player-controls');
-    //   body = document.querySelector('body');
 
 bigPlayButton.addEventListener('click', function() {
     togglePlayButtons();

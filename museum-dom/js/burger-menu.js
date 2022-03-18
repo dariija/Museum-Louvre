@@ -5,17 +5,14 @@ const welcomeContent = document.querySelector('.welcome__content');
 const overlay = document.querySelector('.overlay');
 
 burgerMenu.addEventListener('click', function() {
-    // body.classList.toggle('no-scroll');
     navMenu.classList.toggle('header__nav_show');
     burgerMenu.classList.toggle('active');
     welcomeContent.classList.toggle('hide');
     overlay.classList.toggle('overlay_active');
-
 });
 
 navMenu.addEventListener('click', function(event) {
     if ( event.target.classList.contains('nav-header__link')) {
-        // body.classList.toggle('no-scroll');
         navMenu.classList.toggle('header__nav_show');
         burgerMenu.classList.toggle('active');
         welcomeContent.classList.toggle('hide');
@@ -25,7 +22,6 @@ navMenu.addEventListener('click', function(event) {
 
 overlay.addEventListener('click', function(event) {
     if (!event.target.classList.contains('.header__nav') || !event.target.classList.contains('.header__nav') ){
-        // body.classList.toggle('no-scroll');
         navMenu.classList.toggle('header__nav_show');
         burgerMenu.classList.toggle('active');
         welcomeContent.classList.toggle('hide');

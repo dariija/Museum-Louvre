@@ -3,7 +3,7 @@ const welcomeSlides= document.querySelectorAll('.welcome-slider__slide'),
       welcomeBullets = document.querySelectorAll('.bullet'),
       welcomeControls = document.querySelector('.welcome-slider__controls'),
       currentNumPoster = document.querySelector('.slider__num-now'),
-
+      
       left = document.querySelector('.welcome-slider__button-left'),
       right = document.querySelector('.welcome-slider__button-right');
 let indexSlide = 0;
