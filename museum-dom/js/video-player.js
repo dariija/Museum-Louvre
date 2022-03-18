@@ -39,7 +39,7 @@ videoProgressBar.addEventListener('input', function() {
 })
 
 mainVideo.addEventListener('timeupdate', function() {
-    videoProgressBar.value = (mainVideo.currentTime * 100)/mainVideo.duration;
+    videoProgressBar.value = (mainVideo.currentTime * 100)/mainVideo.duration || 0;
     if (videoProgressBar.value === 100) togglePlayButtons();
 });
 
