@@ -18,6 +18,23 @@ const overviewTicketOption = document.querySelector('.form__overview-ticket'),
 const basicTicketCost =  document.querySelectorAll('.form__tickets-age-price_basic, .form__cost-basic-cost');
 const seniorTicketCost =  document.querySelectorAll('.form__tickets-age-price_senior, .form__cost-senior-cost');
 
+const dateInput = document.querySelector('.form__input_date'),
+      timeInput = document.querySelector('.form__input_time'),
+      overviewDate= document.querySelector('.form__overview-date'),
+      overviewTime= document.querySelector('.form__overview-time');
+
+dateInput.addEventListener('change', (e) => {
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+    overviewDate.textContent = new Intl.DateTimeFormat('en-US', options).format(new Date(e.target.value))
+    saveData([ dateInput])
+})
+
+timeInput.addEventListener('change', (e) => {
+    console.log('timeInput');
+    overviewTime.textContent = (e.target.value).split(':').join(' : ')
+    saveData([ timeInput])
+})
+
 groupBasic.forEach((item) => {
     item.addEventListener('click', function(event) {
         if (event.target.classList.contains('button-left')) {
@@ -186,5 +203,21 @@ function setData() {
     seniorTicketCost.forEach((el) => {
         if (sessionStorage.getItem('costSeniorTicket')) el.textContent = sessionStorage.getItem('costSeniorTicket')
     });
+
+    const dateInput = document.querySelector('.form__input_date'),
+      timeInput = document.querySelector('.form__input_time'),
+      overviewDate= document.querySelector('.form__overview-date'),
+      overviewTime= document.querySelector('.form__overview-time');
+
+    if (sessionStorage.getItem('date')) {
+        dateInput.value = sessionStorage.getItem('date');
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        overviewDate.textContent = new Intl.DateTimeFormat('en-US', options).format(new Date(sessionStorage.getItem('date')))
+    }
+
+    if (sessionStorage.getItem('time')) {
+        timeInput.value = sessionStorage.getItem('time');
+        overviewTime.textContent = sessionStorage.getItem('time').split(':').join(' : ')
+    }
 };
 

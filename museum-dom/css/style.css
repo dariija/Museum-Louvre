@@ -1712,6 +1712,7 @@ input[type=range]::-webkit-slider-thumb {
     color: #030303;
 }
 
+
 .form__input_date,
 .form__input_time {
     width: 190px;
@@ -1720,11 +1721,18 @@ input[type=range]::-webkit-slider-thumb {
 .form__input_date::-webkit-calendar-picker-indicator,
 .form__input_time::-webkit-calendar-picker-indicator {
     opacity: 0;
+    cursor: pointer;
+    z-index: 100;
 }
 
-.form__input_date::-webkit-datetime-edit,
-.form__input_time::-webkit-datetime-edit {
-    color: transparent;
+input[type="time" i] {
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+input[type="date" i] {
+    padding-left: 50px;
+    padding-right: 15px;
 }
 
 .form__input_date::before {
