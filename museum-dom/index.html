@@ -502,7 +502,7 @@
                                 </div>
                                 
                                 <div class="form__select-wrapper">
-                                    <select class="form__input form__select-ticket ticket-type" name="ticket-ttype" >
+                                    <select class="form__input form__select-ticket ticket-type" name="ticket-type" >
                                         <option class="form__option-ticket ticket-type-choice" value="permanent" data-section="form" selected>Permanent exhibition</option>
                                         <option class="form__option-ticket ticket-type-choice" value="temporary" data-section="form">Temporary exhibition</option>
                                         <option class="form__option-ticket ticket-type-choice" value="combined" data-section="form">Combined Admission</option>
@@ -514,10 +514,10 @@
                                     <div class="form__tickets-group">
                                         <div class="form__tickets-details">
                                             <div class="form__tickets-inner">
-                                                <label class="form__tickets-age" for="basic-form">Basic 18+ (20 €)</label>
+                                                <label class="form__tickets-age" for="basic-form">Basic 18+ <span class="form__tickets-age-price form__tickets-age-price_basic">(20 €)</span></label>
                                                 <div class="form__tickets-value-choose basic-tickets">
                                                     <button class="form__tickets-button button-left" type="button" data-section="form">&minus;</button>
-                                                    <input class="form__tickets-value basic-tickets-value" type="number" data-section="form" min="0" max="20" value="1"  id="basic-form" name="form-basic-value" readonly >
+                                                    <input class="form__tickets-value basic-tickets-value" type="number" data-section="form" min="0" max="20" value="1"  id="basic-form" name="tickets-basic-value" readonly >    
                                                     <button class="form__tickets-button button-right" type="button" data-section="form">&plus;</button>
                                                 </div>
                                             </div>
@@ -525,10 +525,10 @@
 
                                         <div class="form__tickets-details">
                                             <div class="form__tickets-inner">
-                                                <label class="form__tickets-age" for="senior-form">Senior 65+ (10 €)</label>
+                                                <label class="form__tickets-age" for="senior-form">Senior 65+ <span class="form__tickets-age-price form__tickets-age-price_senior">(10 €)</span></label>
                                                 <div class="form__tickets-value-choose senior-tickets">
                                                     <button class="form__tickets-button button-left" type="button" data-section="form"">&minus;</button>
-                                                    <input class="form__tickets-value senior-tickets-value" type="number" data-section="form" min="0" max="20" value="1" id="senior-form" name="form-senior-value" readonly >
+                                                    <input class="form__tickets-value senior-tickets-value" type="number" data-section="form" min="0" max="20" value="1" id="senior-form" name="tickets-senior-value" readonly >
                                                     <button class="form__tickets-button button-right" type="button" data-section="form">&plus;</button>
                                                 </div>
                                             </div>   
@@ -551,12 +551,12 @@
 
                                 <div class="form__cost-info">
                                     <div class="form__cost-details">
-                                        <p class="form__cost-basic">Basic (20 €)</p>
+                                        <p class="form__cost-basic" data-before="1">Basic <span class="form__cost-basic-cost">(20 €)</span></p>
                                         <p class="form__cost-basic-price">40 €</p>
                                     </div>
 
                                     <div class="form__cost-details">
-                                        <p class="form__cost-senior">Senior (10 €)</p>
+                                        <p class="form__cost-senior" data-before="1">Senior  <span class="form__cost-senior-cost">(10 €)</span></p>
                                         <p class="form__cost-senior-price">20 €</p>
                                     </div>
 

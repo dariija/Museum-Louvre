@@ -1,84 +1,106 @@
 let radioInputs = document.querySelectorAll('.ticket-type__choice'),
-    numberInputs = document.querySelectorAll('input[type="number"]'),
-    amountTotalValue = document.querySelector('.amount__total-value');
+    amountTotalValue = document.querySelectorAll('.amount__total-value, .form__cost-total-price');
 
-setData();
-
-const groupBasic = document.querySelector('.amount__calc-basic'),
-      groupSenior = document.querySelector('.amount__calc-senior'),
+const groupBasic = document.querySelectorAll('.basic-tickets'),
+      groupSenior = document.querySelectorAll('.senior-tickets'),
       groupTicketChoice = document.querySelector('.ticket-type');
 
-let amountValueBasic = document.querySelector('.amount__value-basic'),
-    amountValueSenior = document.querySelector('.amount__value-senior');
+let amountValueBasic = document.querySelectorAll('.amount__value-basic, .basic-tickets-value'),
+    amountValueSenior = document.querySelectorAll('.amount__value-senior, .senior-tickets-value');
 
-groupBasic.addEventListener('click', function(event) {
-    if (event.target.classList.contains('amount__button-left')) {
-        changeTicketsValue('basic', -1);
+const modalSelectOptionsTicket = document.querySelector('.form__select-ticket');
+const overviewTicketOption = document.querySelector('.form__overview-ticket'),
+      overviewBasicTicketsQuantity = document.querySelector('.form__cost-basic'),
+      overviewSeniorTicketsQuantity = document.querySelector('.form__cost-senior'),
+      overviewBasicTicketsCost = document.querySelector('.form__cost-basic-price'),
+      overviewSeniorTicketsCost = document.querySelector('.form__cost-senior-price');
+
+const basicTicketCost =  document.querySelectorAll('.form__tickets-age-price_basic, .form__cost-basic-cost');
+const seniorTicketCost =  document.querySelectorAll('.form__tickets-age-price_senior, .form__cost-senior-cost');
+
+groupBasic.forEach((item) => {
+    item.addEventListener('click', function(event) {
+        if (event.target.classList.contains('button-left')) {
+            changeTicketsValue('basic', -1);
+        }
+        if (event.target.classList.contains('button-right')) {
+            changeTicketsValue('basic', 1)
+        }
         calcTotal();
-    }
-    if (event.target.classList.contains('amount__button-right')) {
-        changeTicketsValue('basic', 1)
-        calcTotal();
-    }
-});
+    })
+})
 
-groupSenior.addEventListener('click', function(event) {
-    if (event.target.classList.contains('amount__button-left')) {
-        changeTicketsValue('senior', -1)
-        calcTotal();
-    }
-    if (event.target.classList.contains('amount__button-right')) {
-        changeTicketsValue('senior', 1);
+groupSenior.forEach((item) => {
+    item.addEventListener('click', function(event) {
+        if (event.target.classList.contains('button-left')) {
+            changeTicketsValue('senior', -1)
+        }
+        if (event.target.classList.contains('button-right')) {
+            changeTicketsValue('senior', 1);
+        }
         calcTotal()
-    }
-});
+    })
 
-groupBasic.addEventListener('change', function(event) {
-    if (event.target.classList.contains('amount__value-basic')) {
-        calcTotal()
-    }
-});
-
-groupSenior.addEventListener('change', function(event) {
-    if (event.target.classList.contains('amount__value-senior')) {
-        calcTotal()
-    }
 });
 
 groupTicketChoice.addEventListener('change', function(event) {
-    if (event.target.classList.contains('ticket-type__choice')) {
         calcTotal()
-    }
 });
 
 radioInputs.forEach(function(input) {
     input.addEventListener('change', function(event) {
-        sessionStorage.setItem(`${event.target.name}`, `${event.target.value}`)
+        sessionStorage.setItem(`${event.target.name}`, `${event.target.value}`);
+        changeTicketsCost(event.target.value);
+        for (let i = 0; i < modalSelectOptionsTicket.length; i++) {
+            modalSelectOptionsTicket[i].selected = (modalSelectOptionsTicket[i].value === event.target.value);
+        };
+        overviewTicketOption.textContent = event.target.labels[0].textContent;
     });
 }); 
 
+modalSelectOptionsTicket.addEventListener('change', function(event) {
+    radioInputs.forEach((input) => {
+        sessionStorage.setItem(`${event.target.name}`, `${event.target.value}`);
+        changeTicketsCost(event.target.value);
+        input.checked = (input.value === event.target.value);
+        if (input.checked) overviewTicketOption.textContent = input.labels[0].textContent;
+    });
+});
+
+setData();
+
+function changeTicketsCost(ticketType) {
+    const [costBasic, costSenior] = exploreTicketCost(ticketType);
+    basicTicketCost.forEach((el) => el.textContent = `(${costBasic} €)`);
+    seniorTicketCost.forEach((el) => el.textContent = `(${costSenior} €)`);
+    saveData([ basicTicketCost[0], seniorTicketCost[0]])
+}
+
 function changeTicketsValue(age, x) {
     if ( age === 'basic') {
-        let value = amountValueBasic.valueAsNumber + x;
-
-        if (value < 0) amountValueBasic.valueAsNumber = 0
-        else if (value > 20) amountValueBasic.valueAsNumber = 20
-        else amountValueBasic.valueAsNumber = value
+        amountValueBasic.forEach((item) => {
+            item.valueAsNumber = calcTicketsValue(item.valueAsNumber + x);
+            overviewBasicTicketsQuantity.dataset.before = item.valueAsNumber;
+        });
     }
 
     if ( age === 'senior') {
-        let value = amountValueSenior.valueAsNumber + x;
-
-        if (value < 0) amountValueSenior.valueAsNumber = 0
-        else if (value > 20) amountValueSenior.valueAsNumber = 20
-        else amountValueSenior.valueAsNumber = value
+        amountValueSenior.forEach((item) => {
+            item.valueAsNumber = calcTicketsValue(item.valueAsNumber + x);
+            overviewSeniorTicketsQuantity.dataset.before = item.valueAsNumber;
+        });
     }
 };
+
+function calcTicketsValue(value) {
+    if (value <= 0) return 0
+    else if (value >= 20) return 20
+    else return value
+}
 
 function typeOfTicket() {
     let types = document.querySelectorAll('.ticket-type__choice');
     let ticketType;
-
     types.forEach( function(type) {
         if (type.checked) {
             ticketType = type.value;
@@ -89,35 +111,39 @@ function typeOfTicket() {
 
 function calcTotal() {
     let ticketType = typeOfTicket(),
-        ticketValueBasic = amountValueBasic.valueAsNumber,
-        ticketValueSenior = amountValueSenior.valueAsNumber,
-        costBasic,
-        costSenior;
+        ticketValueBasic = overviewBasicTicketsQuantity.dataset.before,
+        ticketValueSenior = overviewSeniorTicketsQuantity.dataset.before,
+        [costBasic, costSenior] = exploreTicketCost(ticketType);
 
-    if (ticketType === 'permanent') {
-        costBasic = 20;
-        costSenior = 10;
-    } else if (ticketType === 'temporary') {
-        costBasic = 25;
-        costSenior = 12.5;
-    } else if (ticketType === 'combined') {
-        costBasic = 40;
-        costSenior = 20;
-    }
+    const fullPriceBasicTickets = ticketValueBasic * costBasic;
+    const fullPriceSeniorTickets = ticketValueSenior * costSenior;
+    const total = fullPriceBasicTickets + fullPriceSeniorTickets;
+    overviewBasicTicketsCost.textContent =  `${fullPriceBasicTickets} €`;
+    overviewSeniorTicketsCost.textContent =  `${fullPriceSeniorTickets} €`;
+    amountTotalValue.forEach((el) => el.innerHTML = `${total}`);
 
-    let total = ticketValueBasic*costBasic  +  ticketValueSenior*costSenior;
-    amountTotalValue.innerHTML = `${total}`;
-
-    saveData([amountValueBasic, amountValueSenior, amountTotalValue])
+    saveData([amountValueBasic[0], amountValueSenior[0], amountTotalValue[0], basicTicketCost[0], seniorTicketCost[0], overviewBasicTicketsCost, overviewSeniorTicketsCost])
 };
+
+function exploreTicketCost(ticketType) {
+    if (ticketType === 'permanent') return [20, 10]
+    else if (ticketType === 'temporary') return [25, 12.5]
+    else if (ticketType === 'combined') return [40, 20]
+}
 
 function saveData(arr) {
     for (let elem of arr) {
-        sessionStorage.setItem(`${elem.name}`, `${elem.value}`)
-
-        if( !(elem.tagName === 'input')) {
-            sessionStorage.setItem(`${elem.className}`, `${elem.innerHTML}`)  
-        }
+        if ( elem.dataset.costTickets === 'total') {
+            sessionStorage.setItem('totalPrice', `${elem.innerHTML}`)  
+        } else if (elem.classList.contains('form__cost-basic-price')) {
+            sessionStorage.setItem('totalBasicPrice', `${elem.textContent}`)  
+        } else if (elem.classList.contains('form__cost-senior-price')) {
+            sessionStorage.setItem('totalSeniorPrice', `${elem.textContent}`)  
+        } else if (elem.classList.contains('form__tickets-age-price_basic')) {
+            sessionStorage.setItem('costBasicTicket', `${elem.textContent}`)  
+        } else if (elem.classList.contains('form__tickets-age-price_senior')) {
+            sessionStorage.setItem('costSeniorTicket', `${elem.textContent}`)  
+        } else sessionStorage.setItem(`${elem.name}`, `${elem.value}`)
     }
 };
 
@@ -129,12 +155,36 @@ function setData() {
             }
         }
     };
-    for (let input of numberInputs) {
-        if (sessionStorage.getItem(`${input.name}`)) {
-            input.value = sessionStorage.getItem(`${input.name}`)
+    for (let i = 0; i < modalSelectOptionsTicket.length; i++) {
+        if (sessionStorage.getItem(`${modalSelectOptionsTicket.name}`)) {
+            modalSelectOptionsTicket[i].selected = (modalSelectOptionsTicket[i].value === sessionStorage.getItem(`${modalSelectOptionsTicket.name}`));
         }
     };
-    if (sessionStorage.getItem(`${amountTotalValue.className}`)  ) {
-        amountTotalValue.innerHTML = sessionStorage.getItem(`${amountTotalValue.className}`)
-    }
+    if (sessionStorage.getItem('ticket-type')) {
+        const ticketType = sessionStorage.getItem('ticket-type');
+        overviewTicketOption.textContent = ticketType === 'permanent'? 'Permanent exhibition' : ticketType === 'temporary'? 'Temporary exhibition' : 'Combined Admission'
+    };
+    amountValueBasic.forEach((el) => {
+        if (sessionStorage.getItem(`${el.name}`)) el.value = sessionStorage.getItem(`${el.name}`)
+    });
+    amountValueSenior.forEach((el) => {
+        if (sessionStorage.getItem(`${el.name}`)) el.value = sessionStorage.getItem(`${el.name}`)
+    });
+    amountTotalValue.forEach((el) => {
+        if (sessionStorage.getItem('totalPrice')) el.innerHTML = sessionStorage.getItem('totalPrice')
+    });
+
+    if (sessionStorage.getItem(`tickets-basic-value`)) overviewBasicTicketsQuantity.dataset.before = sessionStorage.getItem(`tickets-basic-value`);
+    if (sessionStorage.getItem(`tickets-senior-value`))  overviewSeniorTicketsQuantity.dataset.before = sessionStorage.getItem(`tickets-senior-value`);
+
+    if (sessionStorage.getItem('totalBasicPrice')) overviewBasicTicketsCost.textContent = sessionStorage.getItem('totalBasicPrice');
+    if (sessionStorage.getItem('totalSeniorPrice')) overviewSeniorTicketsCost.textContent = sessionStorage.getItem('totalSeniorPrice');
+
+    basicTicketCost.forEach((el) => {
+        if (sessionStorage.getItem('costBasicTicket')) el.textContent = sessionStorage.getItem('costBasicTicket')
+    });
+    seniorTicketCost.forEach((el) => {
+        if (sessionStorage.getItem('costSeniorTicket')) el.textContent = sessionStorage.getItem('costSeniorTicket')
+    });
 };
+
