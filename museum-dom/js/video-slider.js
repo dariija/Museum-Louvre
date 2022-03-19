@@ -7,13 +7,6 @@ const videoSliderLeftBtn = document.querySelector('.video-slider__button-left'),
 let indexVideo = 0;
 let lastIndex = 0;
 
-function ttt() {
-    [...videoSliderVideos].forEach(function(item, itemIndex) {
-        console.log(`${item.src} --- ${itemIndex}`);
-    }) ;
-    console.log('----------------------')    
-}
-
 videoSliderLeftBtn.addEventListener('click', function(e) {
     changeActiveVideo(indexVideo - 1);
     previousVideoSlide()

@@ -30,7 +30,6 @@ dateInput.addEventListener('change', (e) => {
 })
 
 timeInput.addEventListener('change', (e) => {
-    console.log('timeInput');
     overviewTime.textContent = (e.target.value).split(':').join(' : ')
     saveData([ timeInput])
 })

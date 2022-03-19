@@ -112,12 +112,10 @@ function changeVideoProgressBar() {
 
 function speedUpVideo() {
     mainVideo.playbackRate = Math.fround(mainVideo.playbackRate + 0.25);
-    console.log(mainVideo.playbackRate)
 };
 
 function speedDownVideo() {
     mainVideo.playbackRate = Math.fround(mainVideo.playbackRate - 0.25);
-    console.log(mainVideo.playbackRate)
 };
 
 function toggleFullscreenVideo() {
