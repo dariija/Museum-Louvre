@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.tour-street-view {
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
